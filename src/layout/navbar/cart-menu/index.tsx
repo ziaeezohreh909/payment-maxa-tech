@@ -25,7 +25,6 @@ export default function CartMenu() {
       {anchorElCart && (
         <Box
           sx={{
-            width: "1440px",
             height: "100vh",
             position: "fixed",
             top: "118px",
