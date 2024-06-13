@@ -8,6 +8,8 @@ import BestSeller from "./best-seller";
 import TopBrands from "./top-brands";
 import FirstBannerBox from "./first-banner-box";
 import SecondBannerBox from "./seconsd-banner-box";
+import Blog from "./blog";
+import OurServices from "./our-services";
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ export default function Home() {
       <BestSeller />
       <TopBrands />
       <SecondBannerBox />
+      <Blog />
+      <OurServices />
     </Box>
   );
 }
