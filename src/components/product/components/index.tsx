@@ -1,12 +1,12 @@
 import { Box, Breadcrumbs, Link, Typography } from "@mui/material";
 import React from "react";
-import Sidebar from "./sidebar/sidebar";
+import Sidebar from "./sidebar";
 import Chips from "./chips/Chips";
 import Stack from "@mui/material/Stack";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 // import Products from "./products/Products";
 import CategoryFilterButton from "./category-filter-button";
-import ProductCards from "./products/Products";
+import ProductCards from "./products";
 
 function Products() {
   const breadcrumbs = [
