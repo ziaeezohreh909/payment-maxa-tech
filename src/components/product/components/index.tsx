@@ -1,7 +1,7 @@
 import { Box, Breadcrumbs, Link, Typography } from "@mui/material";
 import React from "react";
 import Sidebar from "./sidebar";
-import Chips from "./chips/Chips";
+import Chips from "./chips";
 import Stack from "@mui/material/Stack";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 // import Products from "./products/Products";
