@@ -22,14 +22,25 @@ type Props = {
 };
 
 export default function SignUp({ setIsSignIn }: Props) {
+  const defaultValues = {
+    name: "",
+    email: "",
+    password: "",
+    agreedToTerms: false,
+  };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+    reset,
+  } = useForm({
+    defaultValues,
+  });
 
   const onSubmit = (data: any) => {
     console.log(data);
+    reset(defaultValues);
   };
 
   return (
