@@ -11,7 +11,10 @@ type Props = {
 export default function CustomContainer({ title, hasLink, children }: Props) {
   return (
     <Box display={"flex"} justifyContent={"center"} marginBottom="48px">
-      <Box sx={{ width: "1224px" }}>
+      <Box
+        sx={{ width: "100%" }}
+        // sx={{ width: "1224px" }}
+      >
         <Box
           sx={{
             display: "flex",
