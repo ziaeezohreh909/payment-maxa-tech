@@ -24,10 +24,12 @@ export default function SignIn({ setIsSignIn }: Props) {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data: any) => {
     console.log(data);
+    reset();
   };
 
   return (
