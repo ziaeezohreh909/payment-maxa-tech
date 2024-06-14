@@ -6,17 +6,17 @@
       "email": "koushyar@gmail.com",
       "password": "1234",
       "cart": [
-        { "itemId": "1", "quantity": 1, "color": "" },
-        { "itemId": "2", "quantity": 1, "color": "" }
+        { "id": "1", "quantity": 1, "color": "" },
+        { "id": "2", "quantity": 1, "color": "" }
       ],
       "wishlist": [],
-      "role": "",
-      "isLoggedIn": false
+      "payment": [],
+      "role": ""
     }
   ],
   "products": [
     {
-      "itemId": 1,
+      "id": 1,
       "name": "Dell XPS 13 Laptop",
       "upc": "884116366808",
       "shortDescription": "Powerful laptop with Intel Core i7 processor and 16GB RAM.",
@@ -47,7 +47,7 @@
       }
     },
     {
-      "itemId": 2,
+      "id": 2,
       "name": "MacBook Air (M1) Laptop",
       "upc": "190199741955",
       "shortDescription": "Sleek laptop with Apple M1 chip and 8GB RAM.",
@@ -78,7 +78,7 @@
       }
     },
     {
-      "itemId": 3,
+      "id": 3,
       "name": "HP Spectre x360 14 Laptop",
       "upc": "195122556878",
       "shortDescription": "Convertible laptop with Intel Core i7 processor and 16GB RAM.",
@@ -109,7 +109,7 @@
       }
     },
     {
-      "itemId": 4,
+      "id": 4,
       "name": "Lenovo ThinkPad X1 Carbon Gen 9 Laptop",
       "upc": "195423667890",
       "shortDescription": "Ultra-portable laptop with Intel Core i7 processor and 16GB RAM.",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "itemId": 5,
+      "id": 5,
       "name": "ASUS ROG Zephyrus G14 Laptop",
       "upc": "195644778903",
       "shortDescription": "Gaming laptop with AMD Ryzen 9 processor and NVIDIA GeForce RTX 3060 GPU.",
@@ -171,7 +171,7 @@
       }
     },
     {
-      "itemId": 6,
+      "id": 6,
       "name": "Microsoft Surface Laptop 4",
       "upc": "889842760792",
       "shortDescription": "Sleek laptop with AMD Ryzen 5 processor and 8GB RAM.",
@@ -202,7 +202,7 @@
       }
     },
     {
-      "itemId": 7,
+      "id": 7,
       "name": "Acer Swift 3 Laptop",
       "upc": "193199780172",
       "shortDescription": "Lightweight laptop with AMD Ryzen 7 processor and 16GB RAM.",
@@ -233,7 +233,7 @@
       }
     },
     {
-      "itemId": 8,
+      "id": 8,
       "name": "Razer Blade 15 Gaming Laptop",
       "upc": "814855026891",
       "shortDescription": "High-performance gaming laptop with Intel Core i7 processor and NVIDIA GeForce RTX 3070 GPU.",
@@ -264,7 +264,7 @@
       }
     },
     {
-      "itemId": 9,
+      "id": 9,
       "name": "Samsung Galaxy Book Pro 360",
       "upc": "887276542797",
       "shortDescription": "Convertible laptop with Intel Core i7 processor and 16GB RAM.",
@@ -295,7 +295,7 @@
       }
     },
     {
-      "itemId": 10,
+      "id": 10,
       "name": "HP Envy x360 15",
       "upc": "194850378161",
       "shortDescription": "Convertible laptop with AMD Ryzen 5 processor and 8GB RAM.",
@@ -326,7 +326,7 @@
       }
     },
     {
-      "itemId": 11,
+      "id": 11,
       "name": "Acer Predator Helios 300",
       "upc": "191114762881",
       "shortDescription": "High-performance gaming laptop with Intel Core i7 processor and NVIDIA GeForce RTX 3060 GPU.",
@@ -357,7 +357,7 @@
       }
     },
     {
-      "itemId": 12,
+      "id": 12,
       "name": "ASUS ZenBook 14",
       "upc": "192876520832",
       "shortDescription": "Compact laptop with AMD Ryzen 5 processor and 8GB RAM.",
@@ -388,7 +388,7 @@
       }
     },
     {
-      "itemId": 13,
+      "id": 13,
       "name": "Dell Inspiron 15 5000",
       "upc": "884116362175",
       "shortDescription": "Versatile laptop with Intel Core i5 processor and 8GB RAM.",
@@ -419,7 +419,7 @@
       }
     },
     {
-      "itemId": 14,
+      "id": 14,
       "name": "Lenovo IdeaPad 3",
       "upc": "195348210087",
       "shortDescription": "Affordable laptop with AMD Ryzen 3 processor and 8GB RAM.",
@@ -450,7 +450,7 @@
       }
     },
     {
-      "itemId": 15,
+      "id": 15,
       "name": "HP Chromebook 14",
       "upc": "193808783958",
       "shortDescription": "Lightweight Chromebook with Intel Celeron processor and 4GB RAM.",
@@ -481,7 +481,7 @@
       }
     },
     {
-      "itemId": 16,
+      "id": 16,
       "name": "Apple MacBook Pro 16",
       "upc": "194252226757",
       "shortDescription": "High-end laptop with Apple M1 Pro chip and 16GB RAM.",
@@ -512,7 +512,7 @@
       }
     },
     {
-      "itemId": 17,
+      "id": 17,
       "name": "LG Gram 17",
       "upc": "719192641020",
       "shortDescription": "Ultra-light laptop with Intel Core i7 processor and 16GB RAM.",
@@ -543,7 +543,7 @@
       }
     },
     {
-      "itemId": 18,
+      "id": 18,
       "name": "Huawei MateBook X Pro",
       "upc": "6901443371578",
       "shortDescription": "Premium laptop with Intel Core i7 processor and 16GB RAM.",
@@ -574,7 +574,7 @@
       }
     },
     {
-      "itemId": 19,
+      "id": 19,
       "name": "MSI Stealth 15M",
       "upc": "824142246299",
       "shortDescription": "Slim gaming laptop with Intel Core i7 processor and NVIDIA GeForce GTX 1660 Ti GPU.",
@@ -605,7 +605,7 @@
       }
     },
     {
-      "itemId": 20,
+      "id": 20,
       "name": "Google Pixelbook Go",
       "upc": "842776111717",
       "shortDescription": "Lightweight Chromebook with Intel Core i5 processor and 8GB RAM.",
@@ -637,7 +637,7 @@
     },
 
     {
-      "itemId": 21,
+      "id": 21,
       "name": "Samsung Galaxy S21 Ultra",
       "upc": "887276549903",
       "shortDescription": "High-end smartphone with 108MP camera and 12GB RAM.",
@@ -668,7 +668,7 @@
       }
     },
     {
-      "itemId": 22,
+      "id": 22,
       "name": "Apple iPhone 13 Pro Max",
       "upc": "194252211928",
       "shortDescription": "Premium smartphone with A15 Bionic chip and 6.7-inch display.",
@@ -699,7 +699,7 @@
       }
     },
     {
-      "itemId": 23,
+      "id": 23,
       "name": "Google Pixel 6 Pro",
       "upc": "842776113590",
       "shortDescription": "Advanced smartphone with Google Tensor chip and 6.7-inch display.",
@@ -730,7 +730,7 @@
       }
     },
     {
-      "itemId": 24,
+      "id": 24,
       "name": "OnePlus 9 Pro",
       "upc": "6921815610090",
       "shortDescription": "Flagship smartphone with Snapdragon 888 and 12GB RAM.",
@@ -761,7 +761,7 @@
       }
     },
     {
-      "itemId": 25,
+      "id": 25,
       "name": "Xiaomi Mi 11 Ultra",
       "upc": "6941059631088",
       "shortDescription": "Feature-packed smartphone with Snapdragon 888 and 50MP camera.",
@@ -792,7 +792,7 @@
       }
     },
     {
-      "itemId": 26,
+      "id": 26,
       "name": "Sony Xperia 1 III",
       "upc": "7311271663405",
       "shortDescription": "High-end smartphone with 4K HDR OLED display and 12GB RAM.",
@@ -823,7 +823,7 @@
       }
     },
     {
-      "itemId": 27,
+      "id": 27,
       "name": "Oppo Find X3 Pro",
       "upc": "6944284675300",
       "shortDescription": "Premium smartphone with Snapdragon 888 and 50MP camera.",
@@ -854,7 +854,7 @@
       }
     },
     {
-      "itemId": 28,
+      "id": 28,
       "name": "Motorola Edge+",
       "upc": "723755015339",
       "shortDescription": "High-performance smartphone with Snapdragon 865 and 108MP camera.",
@@ -885,7 +885,7 @@
       }
     },
     {
-      "itemId": 29,
+      "id": 29,
       "name": "Asus ROG Phone 5",
       "upc": "192876651570",
       "shortDescription": "Gaming smartphone with Snapdragon 888 and 144Hz display.",
@@ -916,7 +916,7 @@
       }
     },
     {
-      "itemId": 30,
+      "id": 30,
       "name": "Nokia 8.3 5G",
       "upc": "6438409057064",
       "shortDescription": "5G smartphone with Snapdragon 765G and 64MP camera.",
@@ -947,7 +947,7 @@
       }
     },
     {
-      "itemId": 31,
+      "id": 31,
       "name": "Samsung Galaxy Note 20 Ultra",
       "upc": "887276453018",
       "shortDescription": "Premium smartphone with S Pen and 108MP camera.",
@@ -978,7 +978,7 @@
       }
     },
     {
-      "itemId": 32,
+      "id": 32,
       "name": "Apple iPhone 12 Pro",
       "upc": "194252022040",
       "shortDescription": "High-end smartphone with A14 Bionic chip and 6.1-inch display.",
@@ -1009,7 +1009,7 @@
       }
     },
     {
-      "itemId": 33,
+      "id": 33,
       "name": "Google Pixel 5",
       "upc": "842776114207",
       "shortDescription": "Mid-range smartphone with 5G support and excellent camera.",
@@ -1040,7 +1040,7 @@
       }
     },
     {
-      "itemId": 34,
+      "id": 34,
       "name": "OnePlus 8T",
       "upc": "6921815612872",
       "shortDescription": "Flagship smartphone with Snapdragon 865 and 120Hz display.",
@@ -1071,7 +1071,7 @@
       }
     },
     {
-      "itemId": 35,
+      "id": 35,
       "name": "Xiaomi Mi 10T Pro",
       "upc": "6941059635698",
       "shortDescription": "Feature-rich smartphone with Snapdragon 865 and 144Hz display.",
@@ -1102,7 +1102,7 @@
       }
     },
     {
-      "itemId": 36,
+      "id": 36,
       "name": "Sony Xperia 5 II",
       "upc": "7311271661203",
       "shortDescription": "Compact smartphone with Snapdragon 865 and 120Hz display.",
@@ -1133,7 +1133,7 @@
       }
     },
     {
-      "itemId": 37,
+      "id": 37,
       "name": "Oppo Reno5 Pro+",
       "upc": "6944284677366",
       "shortDescription": "Advanced smartphone with Snapdragon 865 and 50MP camera.",
@@ -1164,7 +1164,7 @@
       }
     },
     {
-      "itemId": 38,
+      "id": 38,
       "name": "Realme GT",
       "upc": "6941399034302",
       "shortDescription": "Performance smartphone with Snapdragon 888 and 120Hz display.",
@@ -1195,7 +1195,7 @@
       }
     },
     {
-      "itemId": 39,
+      "id": 39,
       "name": "Vivo X60 Pro",
       "upc": "6921815615744",
       "shortDescription": "Photography-focused smartphone with Snapdragon 870 and ZEISS optics.",
@@ -1226,7 +1226,7 @@
       }
     },
     {
-      "itemId": 40,
+      "id": 40,
       "name": "Huawei Mate 40 Pro",
       "upc": "6901443368793",
       "shortDescription": "Premium smartphone with Kirin 9000 and 50MP camera.",
@@ -1258,7 +1258,7 @@
     },
 
     {
-      "itemId": 41,
+      "id": 41,
       "name": "Logitech MX Master 3 Wireless Mouse",
       "upc": "097855151355",
       "shortDescription": "High-performance wireless mouse with customizable buttons and precision scroll wheel.",
@@ -1288,7 +1288,7 @@
       }
     },
     {
-      "itemId": 42,
+      "id": 42,
       "name": "Apple AirPods Pro",
       "upc": "190199246850",
       "shortDescription": "Premium wireless earbuds with active noise cancellation and customizable fit.",
@@ -1318,7 +1318,7 @@
       }
     },
     {
-      "itemId": 43,
+      "id": 43,
       "name": "Samsung T5 Portable SSD 1TB",
       "upc": "887276231874",
       "shortDescription": "Portable SSD with fast transfer speeds and compact design.",
@@ -1348,7 +1348,7 @@
       }
     },
     {
-      "itemId": 44,
+      "id": 44,
       "name": "Bose QuietComfort 35 II Wireless Headphones",
       "upc": "017",
       "shortDescription": "Wireless headphones with active noise cancellation and comfortable design.",
@@ -1378,7 +1378,7 @@
       }
     },
     {
-      "itemId": 45,
+      "id": 45,
       "name": "Razer BlackWidow Elite Mechanical Gaming Keyboard",
       "upc": "814855025041",
       "shortDescription": "Mechanical gaming keyboard with customizable RGB lighting and programmable keys.",
@@ -1408,7 +1408,7 @@
       }
     },
     {
-      "itemId": 46,
+      "id": 46,
       "name": "DJI Mavic Air 2 Drone",
       "upc": "190021009852",
       "shortDescription": "Foldable drone with 4K camera and intelligent shooting modes.",
@@ -1438,7 +1438,7 @@
       }
     },
     {
-      "itemId": 47,
+      "id": 47,
       "name": "Sony WH-1000XM4 Wireless Noise-Canceling Headphones",
       "upc": "027242918347",
       "shortDescription": "Premium wireless headphones with industry-leading noise cancellation.",
@@ -1468,7 +1468,7 @@
       }
     },
     {
-      "itemId": 48,
+      "id": 48,
       "name": "Logitech C920 HD Pro Webcam",
       "upc": "097855065724",
       "shortDescription": "High-definition webcam with 1080p video and stereo audio.",
@@ -1498,7 +1498,7 @@
       }
     },
     {
-      "itemId": 49,
+      "id": 49,
       "name": "Samsung 49-Inch Odyssey G9 Gaming Monitor",
       "upc": "887276402524",
       "shortDescription": "Ultra-wide gaming monitor with 240Hz refresh rate and QLED technology.",
@@ -1528,7 +1528,7 @@
       }
     },
     {
-      "itemId": 50,
+      "id": 50,
       "name": "Logitech G Pro X Wireless Gaming Headset",
       "upc": "097855152345",
       "shortDescription": "Wireless gaming headset with pro-grade Blue VO!CE mic technology.",
@@ -1557,7 +1557,7 @@
       }
     },
     {
-      "itemId": 51,
+      "id": 51,
       "name": "Google Nest Hub Max Smart Display",
       "upc": "193575001506",
       "shortDescription": "Smart display with built-in Google Assistant and 10-inch HD screen.",
@@ -1587,7 +1587,7 @@
       }
     },
     {
-      "itemId": 52,
+      "id": 52,
       "name": "GoPro HERO9 Black Action Camera",
       "upc": "818279026208",
       "shortDescription": "Ultra-high-definition action camera with 5K video and 20MP photos.",
@@ -1617,7 +1617,7 @@
       }
     },
     {
-      "itemId": 53,
+      "id": 53,
       "name": "Apple Magic Keyboard for iPad Pro 12.9-inch",
       "upc": "190199529518",
       "shortDescription": "Wireless keyboard with trackpad designed for iPad Pro 12.9-inch.",
@@ -1647,7 +1647,7 @@
       }
     },
     {
-      "itemId": 54,
+      "id": 54,
       "name": "Sony PlayStation 5 DualSense Wireless Controller",
       "upc": "711719541305",
       "shortDescription": "Wireless gaming controller with haptic feedback and adaptive triggers.",
@@ -1676,7 +1676,7 @@
       }
     },
     {
-      "itemId": 55,
+      "id": 55,
       "name": "Amazon Echo Show 10 (3rd Gen) Smart Display",
       "upc": "841667183226",
       "shortDescription": "Smart display with motion tracking and built-in Alexa voice assistant.",
@@ -1706,7 +1706,7 @@
       }
     },
     {
-      "itemId": 56,
+      "id": 56,
       "name": "Samsung Galaxy Watch 4 Classic",
       "upc": "887276654321",
       "shortDescription": "Stylish smartwatch with advanced health monitoring and LTE connectivity.",
@@ -1736,7 +1736,7 @@
       }
     },
     {
-      "itemId": 57,
+      "id": 57,
       "name": "Bose SoundLink Color Bluetooth Speaker II",
       "upc": "017817746113",
       "shortDescription": "Portable Bluetooth speaker with bold sound and water-resistant design.",
@@ -1766,7 +1766,7 @@
       }
     },
     {
-      "itemId": 58,
+      "id": 58,
       "name": "Logitech G Pro X Superlight Wireless Gaming Mouse",
       "upc": "097855157018",
       "shortDescription": "Ultra-lightweight gaming mouse with HERO sensor and customizable buttons.",
@@ -1796,7 +1796,7 @@
       }
     },
     {
-      "itemId": 59,
+      "id": 59,
       "name": "Sony WH-CH710N Wireless Noise-Canceling Headphones",
       "upc": "027242918354",
       "shortDescription": "Wireless headphones with active noise cancellation and long battery life.",
@@ -1826,7 +1826,7 @@
       }
     },
     {
-      "itemId": 60,
+      "id": 60,
       "name": "Anker Soundcore Liberty Air 2 Pro True Wireless Earbuds",
       "upc": "848061069647",
       "shortDescription": "True wireless earbuds with active noise cancellation and customizable EQ.",
@@ -1857,7 +1857,7 @@
     },
 
     {
-      "itemId": 61,
+      "id": 61,
       "name": "Canon EOS Rebel T7 DSLR Camera",
       "upc": "013803320406",
       "shortDescription": "Entry-level DSLR camera with 24.1MP CMOS sensor and 1080p video recording.",
@@ -1887,7 +1887,7 @@
       }
     },
     {
-      "itemId": 62,
+      "id": 62,
       "name": "Nikon D5600 DSLR Camera",
       "upc": "018208015877",
       "shortDescription": "Advanced DSLR camera with 24.2MP sensor and 1080p touchscreen display.",
@@ -1917,7 +1917,7 @@
       }
     },
     {
-      "itemId": 63,
+      "id": 63,
       "name": "Sony Alpha a6000 Mirrorless Camera",
       "upc": "027242885668",
       "shortDescription": "Compact mirrorless camera with 24.3MP sensor and fast autofocus.",
@@ -1947,7 +1947,7 @@
       }
     },
     {
-      "itemId": 64,
+      "id": 64,
       "name": "Fujifilm X-T4 Mirrorless Camera",
       "upc": "074101033810",
       "shortDescription": "Professional mirrorless camera with 26.1MP sensor and 4K video recording.",
@@ -1977,7 +1977,7 @@
       }
     },
     {
-      "itemId": 65,
+      "id": 65,
       "name": "Canon EOS 90D DSLR Camera",
       "upc": "013803316636",
       "shortDescription": "High-performance DSLR camera with 32.5MP sensor and 4K video recording.",
@@ -2007,7 +2007,7 @@
       }
     },
     {
-      "itemId": 66,
+      "id": 66,
       "name": "Sony Cyber-shot DSC-RX100 VII",
       "upc": "027242961649",
       "shortDescription": "Compact digital camera with 20.1MP sensor and 4K video recording.",
@@ -2037,7 +2037,7 @@
       }
     },
     {
-      "itemId": 67,
+      "id": 67,
       "name": "GoPro HERO9 Black Action Camera",
       "upc": "818279024214",
       "shortDescription": "High-performance action camera with 20MP sensor and 5K video recording.",
@@ -2067,7 +2067,7 @@
       }
     },
     {
-      "itemId": 68,
+      "id": 68,
       "name": "DJI Mavic Air 2 Drone",
       "upc": "190021020113",
       "shortDescription": "Compact drone with 48MP camera and 4K/60fps video recording.",
@@ -2097,7 +2097,7 @@
       }
     },
     {
-      "itemId": 69,
+      "id": 69,
       "name": "Sony Alpha a7 III Mirrorless Camera",
       "upc": "027242912730",
       "shortDescription": "Full-frame mirrorless camera with 24.2MP sensor and 4K video recording.",
@@ -2127,7 +2127,7 @@
       }
     },
     {
-      "itemId": 70,
+      "id": 70,
       "name": "DJI Mavic Air 2 Drone",
       "upc": "190021017048",
       "shortDescription": "Foldable drone with 4K camera and intelligent shooting modes.",
@@ -2158,7 +2158,7 @@
     },
 
     {
-      "itemId": 71,
+      "id": 71,
       "name": "Apple Watch Series 6",
       "upc": "190198830996",
       "shortDescription": "Advanced smartwatch with blood oxygen sensor and always-on Retina display.",
@@ -2188,7 +2188,7 @@
       }
     },
     {
-      "itemId": 72,
+      "id": 72,
       "name": "Samsung Galaxy Watch Active 2",
       "upc": "887276417612",
       "shortDescription": "Sleek smartwatch with fitness tracking and heart rate monitoring.",
@@ -2218,7 +2218,7 @@
       }
     },
     {
-      "itemId": 73,
+      "id": 73,
       "name": "Fitbit Versa 3",
       "upc": "811138039829",
       "shortDescription": "Versatile smartwatch with built-in GPS and health tracking features.",
@@ -2248,7 +2248,7 @@
       }
     },
     {
-      "itemId": 74,
+      "id": 74,
       "name": "Garmin Forerunner 945",
       "upc": "753759207083",
       "shortDescription": "Advanced GPS running watch with performance monitoring and training features.",
@@ -2278,7 +2278,7 @@
       }
     },
     {
-      "itemId": 75,
+      "id": 75,
       "name": "Huawei Watch GT 2 Pro",
       "upc": "886598039829",
       "shortDescription": "Premium smartwatch with titanium body and long-lasting battery life.",
@@ -2308,7 +2308,7 @@
       }
     },
     {
-      "itemId": 76,
+      "id": 76,
       "name": "Fossil Gen 5 Carlyle Stainless Steel Smartwatch",
       "upc": "796483422107",
       "shortDescription": "Stylish smartwatch with Wear OS by Google and heart rate tracking.",
@@ -2338,7 +2338,7 @@
       }
     },
     {
-      "itemId": 77,
+      "id": 77,
       "name": "Apple Watch Series 6",
       "upc": "190199773280",
       "shortDescription": "Advanced smartwatch with blood oxygen monitoring and always-on Retina display.",
@@ -2368,7 +2368,7 @@
       }
     },
     {
-      "itemId": 78,
+      "id": 78,
       "name": "Samsung Galaxy Watch Active 2",
       "upc": "887276362807",
       "shortDescription": "Sleek smartwatch with fitness and health tracking features.",
@@ -2398,7 +2398,7 @@
       }
     },
     {
-      "itemId": 79,
+      "id": 79,
       "name": "Fitbit Versa 3",
       "upc": "811138037587",
       "shortDescription": "Fitness smartwatch with built-in GPS and Active Zone Minutes.",
@@ -2428,7 +2428,7 @@
       }
     },
     {
-      "itemId": 80,
+      "id": 80,
       "name": "Amazfit GTS 2",
       "upc": "6972504041314",
       "shortDescription": "Sleek and stylish smartwatch with AMOLED display and long battery life.",
@@ -2459,7 +2459,7 @@
     },
 
     {
-      "itemId": 81,
+      "id": 81,
       "name": "PlayStation 5 Console",
       "upc": "711719541028",
       "shortDescription": "Next-generation gaming console with 4K graphics and fast SSD storage.",
@@ -2489,7 +2489,7 @@
       }
     },
     {
-      "itemId": 82,
+      "id": 82,
       "name": "Xbox Series X Console",
       "upc": "889842622614",
       "shortDescription": "Powerful gaming console with 4K visuals and fast load times.",
@@ -2519,7 +2519,7 @@
       }
     },
     {
-      "itemId": 83,
+      "id": 83,
       "name": "Nintendo Switch Console",
       "upc": "045496882174",
       "shortDescription": "Versatile gaming console for at-home and on-the-go play.",
@@ -2549,7 +2549,7 @@
       }
     },
     {
-      "itemId": 84,
+      "id": 84,
       "name": "Sony PlayStation 4 Pro Console",
       "upc": "711719521099",
       "shortDescription": "High-performance gaming console with 4K resolution and HDR support.",
@@ -2579,7 +2579,7 @@
       }
     },
     {
-      "itemId": 85,
+      "id": 85,
       "name": "Microsoft Xbox Series X",
       "upc": "889842622074",
       "shortDescription": "Next-generation gaming console with ultra-fast load times and 4K resolution.",
@@ -2609,7 +2609,7 @@
       }
     },
     {
-      "itemId": 86,
+      "id": 86,
       "name": "Razer BlackWidow Elite Mechanical Gaming Keyboard",
       "upc": "814855024974",
       "shortDescription": "Premium mechanical keyboard with customizable RGB lighting and programmable keys.",
@@ -2639,7 +2639,7 @@
       }
     },
     {
-      "itemId": 87,
+      "id": 87,
       "name": "Alienware Aurora R11 Gaming Desktop",
       "upc": "884116370132",
       "shortDescription": "High-performance gaming desktop with customizable RGB lighting.",
@@ -2669,7 +2669,7 @@
       }
     },
     {
-      "itemId": 88,
+      "id": 88,
       "name": "SteelSeries Arctis 7 Wireless Gaming Headset",
       "upc": "813682025054",
       "shortDescription": "Wireless gaming headset with DTS Headphone:X v2.0 surround sound.",
@@ -2699,7 +2699,7 @@
       }
     },
     {
-      "itemId": 89,
+      "id": 89,
       "name": "Razer Kishi Mobile Game Controller",
       "upc": "811659038518",
       "shortDescription": "Universal mobile gaming controller for iOS and Android devices.",
@@ -2730,7 +2730,7 @@
     },
 
     {
-      "itemId": 90,
+      "id": 90,
       "name": "SteelSeries QcK Gaming Mouse Pad",
       "upc": "813682023956",
       "shortDescription": "Large gaming mouse pad optimized for precision and control.",
