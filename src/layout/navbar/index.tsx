@@ -7,9 +7,7 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../assets/images/logo.png";
 import { Stack } from "@mui/material";
@@ -18,8 +16,15 @@ import CartMenu from "./cart-menu";
 import SearchPopup from "./search-popup";
 import { useAuth } from "@/hooks/useAuth";
 import Login from "./login";
+import Link from "next/link";
 
-const pages = ["Home", "Products", "Blog", "FAQ", "Contact Us"];
+const pages = [
+  ["Home", "/"],
+  ["Products", "/products"],
+  ["Blog", "/blog"],
+  ["FAQ", "/faq"],
+  ["Contact Us", "/contact-us"],
+];
 
 export default function Navbar() {
   const { loggedInUser } = useAuth();
@@ -36,113 +41,126 @@ export default function Navbar() {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{
-        bgcolor: "transparent",
-        color: "black",
-        boxShadow: "none",
-        px: "110px",
-        py: "20px",
-        borderBottom: "solid blue 2px",
-      }}
-    >
-      <Container disableGutters maxWidth="xl">
-        <Toolbar disableGutters sx={{ paddingLeft: 0, paddingRight: 0 }}>
-          <Stack
-            sx={{ width: "100%" }}
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Box
-              component="img"
-              src={logo.src}
-              alt="Logo"
-              sx={{ height: "63px", width: "56px", marginRight: 2 }}
-            />
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography
-                      textAlign="center"
-                      sx={{ color: "black", textTransform: "none" }}
-                    >
-                      {page}
-                    </Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-
-            <Box
-              sx={{
-                flexGrow: 0,
-                display: { xs: "none", md: "flex" },
-              }}
-            >
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    mx: "24px",
-                    fontSize: "18px",
-                    fontWeight: "light",
-                    color: "black",
-                    display: "block",
-                    textTransform: "none",
-                  }}
-                >
-                  {page}
-                </Button>
-              ))}
-            </Box>
-
+    <>
+      <AppBar
+        position="static"
+        sx={{
+          bgcolor: "transparent",
+          color: "black",
+          boxShadow: "none",
+          // px: "110px",
+          py: "20px",
+        }}
+      >
+        <Container disableGutters sx={{ maxWidth: "1440px" }}>
+          <Toolbar disableGutters sx={{ paddingLeft: 0, paddingRight: 0 }}>
             <Stack
+              sx={{ width: "100%" }}
               direction="row"
               justifyContent="space-between"
               alignItems="center"
-              spacing={4}
-              sx={{ flexGrow: 0 }}
             >
-              <SearchPopup />
-              <CartMenu />
-              {loggedInUser ? <AccountMenu /> : <Login />}
+              <Box
+                component="img"
+                src={logo.src}
+                alt="Logo"
+                sx={{ height: "63px", width: "56px", marginRight: 2 }}
+              />
+
+              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  {pages.map((page) => (
+                    <Link key={page[0]} href={page[1]}>
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography
+                          textAlign="center"
+                          sx={{ color: "black", textTransform: "none" }}
+                        >
+                          {page[0]}
+                        </Typography>
+                      </MenuItem>
+                    </Link>
+                  ))}
+                </Menu>
+              </Box>
+
+              <Box
+                sx={{
+                  flexGrow: 0,
+                  display: { xs: "none", md: "flex" },
+                }}
+              >
+                {pages.map((page) => (
+                  <Link key={page[0]} href={page[1]}>
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={{
+                        my: 2,
+                        mx: "24px",
+                        fontSize: "18px",
+                        fontWeight: "light",
+                        color: "black",
+                        display: "block",
+                        textTransform: "none",
+                      }}
+                    >
+                      {page[0]}
+                    </Button>
+                  </Link>
+                ))}
+              </Box>
+
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                spacing={4}
+                sx={{ flexGrow: 0 }}
+              >
+                <SearchPopup />
+                <CartMenu />
+                {loggedInUser ? <AccountMenu /> : <Login />}
+              </Stack>
             </Stack>
-          </Stack>
-        </Toolbar>
-      </Container>
-    </AppBar>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <Box
+        className="child1"
+        sx={{
+          height: 2,
+          borderRadius: 4,
+          backgroundImage:
+            "linear-gradient(to right, #81b4ff, #6da1f4, #598ee8, #457cdc, #3069cf, #3069cf, #3069cf, #3069cf, #457cdc, #598ee8, #6da1f4, #81b4ff)",
+        }}
+      ></Box>
+    </>
   );
 }
