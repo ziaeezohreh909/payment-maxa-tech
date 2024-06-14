@@ -17,7 +17,7 @@ export default function Home() {
       sx={{
         width: "100%",
         height: "100%",
-        px: "110px",
+        // px: "108px",
       }}
     >
       <Intro />

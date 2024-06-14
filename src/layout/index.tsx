@@ -7,10 +7,19 @@ type LayoutProps = { children: ReactNode };
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <Box>
+    <>
       <Navbar />
-      <main className="overflow-x-auto">{children}</main>
+      <Box
+        sx={{
+          width: "100%",
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: "108px",
+        }}
+      >
+        {children}
+      </Box>
       <Footer />
-    </Box>
+    </>
   );
 }
