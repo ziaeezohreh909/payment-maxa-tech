@@ -9,13 +9,13 @@ import SimilarProductsSlider from "./similar-products";
 
 export default function SingleProductWidget() {
   const routerId = useRouter().query.id;
-  const { data: oneProduct } = useGetProductById(Number(routerId));
-  console.log(oneProduct?.categoryName);
-
-  const { data: productsByCategory } = useGetProductByCategory(
-    oneProduct?.categoryName
+  const { data: oneProduct, isSuccess: isProductLoaded } = useGetProductById(
+    Number(routerId)
   );
-  console.log(productsByCategory);
+  const { data: productsByCategory } = useGetProductByCategory(
+    isProductLoaded ? oneProduct?.categoryName : "",
+    isProductLoaded ? Number(routerId) : 0
+  );
 
   return (
     <Box>
