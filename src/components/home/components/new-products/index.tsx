@@ -9,7 +9,11 @@ function NewProducts() {
     <CustomContainer hasLink={true} title="New Products">
       <Box display={"flex"} gap={"24px"}>
         {data?.map((item) => (
-          <Card key={item.itemId} cardProps={item} />
+          <Card
+            key={item.id}
+            cardProps={item}
+            hoverMode={{ hoverMode: "landingHover" }}
+          />
         ))}
       </Box>
     </CustomContainer>

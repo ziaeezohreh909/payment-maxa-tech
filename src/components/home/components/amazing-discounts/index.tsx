@@ -92,8 +92,11 @@ export default function AmazingDiscounts() {
                 ref={scrollRef}
               >
                 {data?.map((item) => (
-                  <Box key={item.itemId} sx={{ marginRight: "10px" }}>
-                    <Card cardProps={item} />
+                  <Box key={item.id} sx={{ marginRight: "10px" }}>
+                    <Card
+                      cardProps={item}
+                      hoverMode={{ hoverMode: "landingHover" }}
+                    />
                   </Box>
                 ))}
               </Box>

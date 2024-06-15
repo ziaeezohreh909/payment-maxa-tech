@@ -46,7 +46,10 @@ export default function SimilarProductsSlider({ products }: Props) {
           {products?.map((product) => (
             <SwiperSlide key={product.id}>
               <Box padding={"1px"}>
-                <Card cardProps={product}></Card>
+                <Card
+                  cardProps={product}
+                  hoverMode={{ hoverMode: "productHover" }}
+                ></Card>
               </Box>
             </SwiperSlide>
           ))}
