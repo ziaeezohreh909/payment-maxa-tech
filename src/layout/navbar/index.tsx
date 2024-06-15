@@ -23,7 +23,7 @@ const pages = [
   ["Products", "/products"],
   ["Blog", "/blog"],
   ["FAQ", "/faq"],
-  ["Contact Us", "/contact-us"],
+  ["About Us", "/about-us"],
 ];
 
 export default function Navbar() {
@@ -48,7 +48,6 @@ export default function Navbar() {
           bgcolor: "transparent",
           color: "black",
           boxShadow: "none",
-          // px: "110px",
           py: "20px",
         }}
       >
