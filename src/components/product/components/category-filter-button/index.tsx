@@ -10,8 +10,8 @@ import smartWatch from "@/assets/images/categories-icons/watch-status.svg";
 const category = [
   {
     id: 1,
-    src: accessories,
-    name: "Accessories",
+    src: smartPhone,
+    name: "Smart Phone",
   },
   {
     id: 2,
@@ -26,8 +26,8 @@ const category = [
   },
   {
     id: 4,
-    src: smartPhone,
-    name: "Smart Phone",
+    src: smartWatch,
+    name: "Smart Watch",
   },
   {
     id: 5,
@@ -36,12 +36,16 @@ const category = [
   },
   {
     id: 6,
-    src: smartWatch,
-    name: "Smart Watch",
+    src: accessories,
+    name: "Accessories",
   },
 ];
 
-function CategoryFilterButton() {
+function CategoryFilterButton({
+  setCategory,
+}: {
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
+}) {
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap", gap: "32px", mb: "48px" }}>
       {category.map((item) => (
@@ -73,6 +77,7 @@ function CategoryFilterButton() {
               fontWeight: "300",
               textAlign: "center",
             }}
+            onClick={() => setCategory(item.name)}
           >
             {item.name}
           </Typography>
