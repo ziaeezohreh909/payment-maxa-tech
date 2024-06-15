@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import maxaTech from "@/assets/images/maxatech.png";
 
-export default function Intro() {
+export default function Hero() {
   return (
     <Container disableGutters>
       <Box
