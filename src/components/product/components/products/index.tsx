@@ -1,10 +1,16 @@
 import React from "react";
-import { useGetAllProducts } from "../../hooks";
 import { Box } from "@mui/material";
 import Card from "@/components/shared/card";
+import { IProduct } from "@/components/home/hooks/types";
 
-function ProductCards() {
-  const { data, isLoading, isError } = useGetAllProducts();
+function ProductCards({
+  data,
+  isLoading,
+}: {
+  data: IProduct[] | undefined;
+  isLoading: boolean;
+}) {
+  console.log(isLoading);
   return (
     <Box
       sx={{
@@ -12,7 +18,7 @@ function ProductCards() {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        gap: 5,
+        mb: "20px",
       }}
     >
       {data?.map((item) => (
