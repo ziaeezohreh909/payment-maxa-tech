@@ -44,30 +44,12 @@ export default function SimilarProductsSlider({ products }: Props) {
           }}
         >
           {products?.map((product) => (
-            <SwiperSlide key={product.itemId}>
+            <SwiperSlide key={product.id}>
               <Box padding={"1px"}>
                 <Card cardProps={product}></Card>
               </Box>
             </SwiperSlide>
           ))}
-          {/* <SwiperSlide >
-          <Box padding={1}><Card cardProps={product} ></Card></Box>
-        </SwiperSlide> */}
-          {/* <SwiperSlide>
-          <Box padding={1}><Card cardProps={product} ></Card></Box>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box padding={1}><Card cardProps={product} ></Card></Box>       
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box padding={1}><Card cardProps={product} ></Card></Box>       
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box padding={1}><Card cardProps={product} ></Card></Box>      
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box padding={1}><Card cardProps={product} ></Card></Box>       
-        </SwiperSlide> */}
         </Swiper>
       </Box>
     </Box>
