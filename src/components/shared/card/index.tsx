@@ -209,7 +209,7 @@ export default function Card({
               ":hover .cardDiscount": { visibility: "hidden" },
               ":hover .heartIcon": { visibility: "visible" },
               ":hover .cardColorPallet": { visibility: "hidden" },
-              ":hover .imageHoverEffect": { width: "272px", height: "202px" },
+              ":hover .imageHoverEffect": { height: "190px" },
               ":hover .priceAndRate": { visibility: "hidden" },
               ":hover .addBtn": { visibility: "visible" },
             }}
@@ -259,6 +259,7 @@ export default function Card({
                   height: "190px",
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
                 <Box
@@ -266,7 +267,7 @@ export default function Card({
                   component="img"
                   sx={{ marginRight: "20px" }}
                   src={cardProps.thumbnailImage}
-                  width="217px"
+                  // width="217px"
                   height="161px"
                 />
                 {/* <Box className="cardColorPallet" display={'flex'} gap="8px" flexDirection={"column"} >
