@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
+    "@tanstack/react-query": "^5.45.0",
     "axios": "^1.7.2",
     "json-server": "^0.17.4",
     "material-ui-popup-state": "^5.1.2",
@@ -21,7 +22,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.5",
-    "react-query": "^3.39.3"
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@types/node": "^20",
