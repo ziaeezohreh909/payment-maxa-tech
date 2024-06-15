@@ -80,20 +80,24 @@ export default function SingleProduct({ product }: { product: IProduct }) {
               <Box
                 display={"flex"}
                 alignItems={"center"}
-                width={"43px"}
+                justifyContent={"center"}
                 height={"24px"}
                 borderRadius={"4px"}
                 color={"white"}
                 bgcolor={"#063A88"}
+                px={"10px"}
+                py={"7px"}
               >
                 <Box
+                  sx={{ marginBottom: "2px", marginRight: "4px" }}
                   component={"img"}
                   src={star.src}
-                  height={"18px"}
-                  width={"18px"}
-                  padding={"3px"}
+                  height={"12px"}
+                  width={"12px"}
                 ></Box>
-                <Typography>{product?.customerRating}</Typography>
+                <Typography sx={{ mt: "2px" }}>
+                  {product?.customerRating}
+                </Typography>
               </Box>
               <Divider orientation="vertical" flexItem />
               <Box color={"#717171"}>sold {product?.numReviews}</Box>
