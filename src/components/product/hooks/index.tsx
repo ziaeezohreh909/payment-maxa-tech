@@ -1,5 +1,5 @@
 import { IProduct } from "@/components/home/hooks/types";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getAllProducts } from "../services";
 
 export const useGetAllProducts = (category: string | undefined) => {
