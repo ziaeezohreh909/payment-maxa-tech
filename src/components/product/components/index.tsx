@@ -1,14 +1,16 @@
 import { Box, Breadcrumbs, Link, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "./sidebar";
-import Chips from "./chips";
 import Stack from "@mui/material/Stack";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-// import Products from "./products/Products";
 import CategoryFilterButton from "./category-filter-button";
 import ProductCards from "./products";
+import { useGetAllProducts } from "../hooks";
+import SortProduct from "./sort-products";
 
 function Products() {
+  const [category, setCategory] = useState("");
+  const { data, isLoading } = useGetAllProducts(category);
   const breadcrumbs = [
     <Link
       sx={{ fontSize: "18px" }}
@@ -54,7 +56,7 @@ function Products() {
           width: "100%",
         }}
       >
-        <CategoryFilterButton />
+        <CategoryFilterButton setCategory={setCategory} />
       </Box>
       <Box
         sx={{
@@ -70,35 +72,30 @@ function Products() {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          gap: 1,
-          alignItems: "start",
+          justifyContent: "center",
           width: "100%",
-          height: "100vh",
+          position: "relative",
+          gap: "24px",
         }}
       >
-        <Box sx={{ width: "25%" }}>
+        <Box sx={{ width: "288px" }}>
           <Sidebar />
         </Box>
         <Box
           sx={{
-            width: "75%",
-            display: "flex",
-            flexDirection: "column",
+            position: "absolute",
+            right: 0,
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "end",
-              pr: 2,
-            }}
-          >
-            Sort By :
-          </Box>
-          <Box>
-            <ProductCards />
-          </Box>
+          <SortProduct />
+        </Box>
+        <Box
+          sx={{
+            width: "912px",
+            mt: "72px",
+          }}
+        >
+          <ProductCards data={data} isLoading={isLoading} />
         </Box>
       </Box>
     </Box>
