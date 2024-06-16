@@ -24,5 +24,6 @@ export const useGetNewProducts = () => {
   return useQuery<IProduct[]>({
     queryKey: ["new-products"],
     queryFn: () => getNewProducts(),
+    refetchOnWindowFocus: false,
   });
 };
