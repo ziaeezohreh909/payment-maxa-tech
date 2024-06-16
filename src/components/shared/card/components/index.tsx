@@ -7,21 +7,26 @@ import { IProduct } from "@/components/home/hooks/types";
 import Link from "next/link";
 import shoppingCard from "@/assets/images/shopping-cart.svg";
 
-// type CardPropsType = {
-//   cardProps: IProduct;
-// };
-
 type Hover = {
   hoverMode: "landingHover" | "productHover";
 };
 
-export default function Card({
-  cardProps,
-  hoverMode,
-}: {
+type CardProps = {
   cardProps: IProduct;
   hoverMode: Hover;
-}) {
+};
+
+export default function Card({ cardProps, hoverMode }: CardProps) {
+  const handleAddToCartClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    event.preventDefault();
+  };
+
+  const handleAddToWishList = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    event.preventDefault();
+  };
+
   return (
     <Box>
       {hoverMode.hoverMode === "landingHover" && (
@@ -65,6 +70,7 @@ export default function Card({
 
             {
               <Box
+                onClick={handleAddToWishList}
                 component="img"
                 src={heart.src}
                 className="child4"
@@ -233,6 +239,7 @@ export default function Card({
 
             {
               <Box
+                onClick={handleAddToWishList}
                 component="img"
                 src={heart.src}
                 className="heartIcon"
@@ -351,6 +358,7 @@ export default function Card({
                 </Box>
               </Box>
               <Button
+                onClick={handleAddToCartClick}
                 className="addBtn"
                 variant="outlined"
                 startIcon={<img src={shoppingCard.src}></img>}

@@ -6,8 +6,8 @@ import "swiper/css/navigation";
 
 import { Navigation, Pagination } from "swiper/modules";
 import { Box, Typography } from "@mui/material";
-import Card from "@/components/shared/card";
 import { IProduct } from "@/components/home/hooks/types";
+import Card from "@/components/shared/card/components";
 
 type Props = {
   products: IProduct[];

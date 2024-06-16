@@ -7,7 +7,6 @@ import Time from "@/assets/images/footer-icons/icon.svg";
 export default function OurServices() {
   return (
     <>
-      {/* <Box px="108px"> */}
       <Box
         height="100px"
         display="flex"

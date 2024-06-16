@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { useGetNewProducts } from "../../hooks";
-import Card from "@/components/shared/card";
+import Card from "@/components/shared/card/components";
 import CustomContainer from "@/components/shared/custom-container";
 
 function NewProducts() {
