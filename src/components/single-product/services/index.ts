@@ -11,13 +11,15 @@ function shuffleArray(array: IProduct[]): IProduct[] {
 }
 
 export async function getProductById(id: number): Promise<IProduct> {
-  const res = await axios.get(BASE_URL + "/" + id);
+  const res = await axios.get(`${BASE_URL}/products/${id}`);
   return res.data;
 }
 
 export async function getProductByCategory(
   category: string
 ): Promise<IProduct[]> {
-  const res = await axios.get(`${BASE_URL}/?categoryName=${category}&_limit=7`);
+  const res = await axios.get(
+    `${BASE_URL}/products/?categoryName=${category}&_limit=7`
+  );
   return shuffleArray(res.data);
 }
