@@ -2,7 +2,7 @@ import { BASE_URL } from "@/constants/urls";
 import axios from "axios";
 
 export async function getAllProducts(categoryName = "") {
-  const url = `${BASE_URL}${
+  const url = `${BASE_URL}/products${
     categoryName ? `?categoryName=${categoryName}` : ""
   }`;
   const { data } = await axios.get(url);
