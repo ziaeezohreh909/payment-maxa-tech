@@ -17,7 +17,11 @@ export default function SimilarProductsSlider({ products }: Props) {
   return (
     <Box marginTop={"46px"} marginBottom={"48px"} height={"403px"}>
       <Box>
-        <Typography fontSize={"20px"}>Similar Products</Typography>
+        <Typography
+          sx={{ mt: "46px", mb: "32px", fontSize: "20px", fontWeight: "500" }}
+        >
+          Similar Products
+        </Typography>
       </Box>
       <Box>
         <Swiper
@@ -45,7 +49,7 @@ export default function SimilarProductsSlider({ products }: Props) {
         >
           {products?.map((product) => (
             <SwiperSlide key={product.id}>
-              <Box padding={"1px"}>
+              <Box padding={"5px"}>
                 <Card
                   cardProps={product}
                   hoverMode={{ hoverMode: "productHover" }}
