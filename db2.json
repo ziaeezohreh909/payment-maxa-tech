@@ -4,14 +4,44 @@
       "id": 1,
       "userName": "koushyar",
       "email": "koushyar@gmail.com",
-      "password": "1234",
-      "cart": [
-        { "id": "1", "quantity": 1, "color": "" },
-        { "id": "2", "quantity": 1, "color": "" }
-      ],
-      "wishlist": [],
-      "payment": [],
+      "password": "123456",
       "role": ""
+    }
+  ],
+  "cart": [
+    {
+      "userId": "1",
+      "cartProducts": {
+        "productId": "1",
+        "quantity": 3,
+        "color": ""
+      }
+    },
+    {
+      "userId": "2",
+      "cartProducts": {
+        "productId": "1",
+        "quantity": 2,
+        "color": ""
+      }
+    }
+  ],
+  "wishlist": [
+    {
+      "userId": "1",
+      "cartProducts": {
+        "productId": "1",
+        "quantity": 3,
+        "color": ""
+      }
+    },
+    {
+      "userId": "2",
+      "cartProducts": {
+        "productId": "1",
+        "quantity": 2,
+        "color": ""
+      }
     }
   ],
   "products": [
@@ -52,7 +82,7 @@
       "upc": "190199741955",
       "shortDescription": "Sleek laptop with Apple M1 chip and 8GB RAM.",
       "longDescription": "The MacBook Air (M1) laptop is sleek and powerful, featuring the revolutionary Apple M1 chip, 8GB of RAM, and a fast 256GB SSD.",
-      "price": 999.0,
+      "price": 999,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": false,
@@ -486,7 +516,7 @@
       "upc": "194252226757",
       "shortDescription": "High-end laptop with Apple M1 Pro chip and 16GB RAM.",
       "longDescription": "The Apple MacBook Pro 16\" is a high-end laptop, featuring the powerful Apple M1 Pro chip, 16GB of RAM, and a 512GB SSD.",
-      "price": 2499.0,
+      "price": 2499,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": true,
@@ -635,7 +665,6 @@
         "endDate": "2024-06-15"
       }
     },
-
     {
       "id": 21,
       "name": "Samsung Galaxy S21 Ultra",
@@ -1256,7 +1285,6 @@
         "endDate": "2024-06-15"
       }
     },
-
     {
       "id": 41,
       "name": "Logitech MX Master 3 Wireless Mouse",
@@ -1293,7 +1321,7 @@
       "upc": "190199246850",
       "shortDescription": "Premium wireless earbuds with active noise cancellation and customizable fit.",
       "longDescription": "Apple AirPods Pro are premium wireless earbuds featuring active noise cancellation for an immersive sound experience. They offer a customizable fit with silicone ear tips and are water and sweat-resistant, making them perfect for workouts or daily commutes.",
-      "price": 249.0,
+      "price": 249,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": true,
@@ -1353,7 +1381,7 @@
       "upc": "017",
       "shortDescription": "Wireless headphones with active noise cancellation and comfortable design.",
       "longDescription": "The Bose QuietComfort 35 II Wireless Headphones deliver world-class noise cancellation and balanced sound performance. With up to 20 hours of battery life and a comfortable, lightweight design, they're perfect for long listening sessions and travel.",
-      "price": 299.0,
+      "price": 299,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": true,
@@ -1413,7 +1441,7 @@
       "upc": "190021009852",
       "shortDescription": "Foldable drone with 4K camera and intelligent shooting modes.",
       "longDescription": "The DJI Mavic Air 2 Drone combines powerful performance with intelligent features for stunning aerial photography and videography. With a 48MP camera and 4K/60fps video recording capabilities, it captures breathtaking images and smooth footage. Its foldable design and advanced obstacle sensing technology make it easy and safe to fly in various environments.",
-      "price": 799.0,
+      "price": 799,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": false,
@@ -1562,7 +1590,7 @@
       "upc": "193575001506",
       "shortDescription": "Smart display with built-in Google Assistant and 10-inch HD screen.",
       "longDescription": "The Google Nest Hub Max Smart Display combines the functionality of a smart speaker with a vibrant 10-inch HD display. With built-in Google Assistant, it helps you stay organized, entertained, and connected. You can stream videos, make video calls, control smart home devices, and more, all with simple voice commands or touchscreen gestures.",
-      "price": 229.0,
+      "price": 229,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": true,
@@ -1622,7 +1650,7 @@
       "upc": "190199529518",
       "shortDescription": "Wireless keyboard with trackpad designed for iPad Pro 12.9-inch.",
       "longDescription": "The Apple Magic Keyboard for iPad Pro 12.9-inch combines a full-size keyboard with a trackpad for a seamless typing and navigation experience. With a floating cantilever design and adjustable viewing angles, it provides comfortable and versatile use. Plus, with backlit keys and a USB-C port for charging, it's the perfect companion for your iPad Pro.",
-      "price": 349.0,
+      "price": 349,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": true,
@@ -1741,7 +1769,7 @@
       "upc": "017817746113",
       "shortDescription": "Portable Bluetooth speaker with bold sound and water-resistant design.",
       "longDescription": "The Bose SoundLink Color Bluetooth Speaker II delivers bold sound in a compact and water-resistant design. With Bluetooth connectivity and a built-in rechargeable battery, it's perfect for listening to music on the go. Plus, with a range of vibrant colors to choose from, it adds a splash of style to any environment.",
-      "price": 129.0,
+      "price": 129,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": true,
@@ -1855,7 +1883,6 @@
         "endDate": "2024-06-15"
       }
     },
-
     {
       "id": 61,
       "name": "Canon EOS Rebel T7 DSLR Camera",
@@ -2156,7 +2183,6 @@
         "endDate": "2024-06-15"
       }
     },
-
     {
       "id": 71,
       "name": "Apple Watch Series 6",
@@ -2313,7 +2339,7 @@
       "upc": "796483422107",
       "shortDescription": "Stylish smartwatch with Wear OS by Google and heart rate tracking.",
       "longDescription": "The Fossil Gen 5 Carlyle Stainless Steel Smartwatch combines style and functionality in one sleek device. Powered by Wear OS by Google, it offers seamless integration with Android and iOS smartphones, allowing you to stay connected wherever you go. It features built-in GPS, heart rate tracking, and activity tracking to help you achieve your fitness goals. With its customizable dials and interchangeable straps, it's easy to personalize to your style. With water resistance and all-day battery life, it's the perfect companion for everyday wear.",
-      "price": 295.0,
+      "price": 295,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": true,
@@ -2343,7 +2369,7 @@
       "upc": "190199773280",
       "shortDescription": "Advanced smartwatch with blood oxygen monitoring and always-on Retina display.",
       "longDescription": "The Apple Watch Series 7 is the latest generation of Apple's iconic smartwatch. It features a new blood oxygen sensor and app for measuring your blood oxygen levels, along with an always-on Retina display for easy viewing in any light. With its powerful S6 chip, it offers fast performance and smooth navigation. It also includes advanced health tracking features like ECG, heart rate monitoring, and sleep tracking. With its sleek design, customizable watch faces, and wide range of apps, it's the ultimate companion for a healthy, active lifestyle.",
-      "price": 399.0,
+      "price": 399,
       "currency": "USD",
       "availableOnline": true,
       "availableInStore": true,
@@ -2457,7 +2483,6 @@
         "endDate": null
       }
     },
-
     {
       "id": 81,
       "name": "PlayStation 5 Console",
@@ -2728,7 +2753,6 @@
         "endDate": "2024-06-10"
       }
     },
-
     {
       "id": 90,
       "name": "SteelSeries QcK Gaming Mouse Pad",
