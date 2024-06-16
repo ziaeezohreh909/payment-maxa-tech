@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import user from "@/assets/images/navbar-icons/user.png";
 import SignIn from "./signin";
 import SignUp from "./signup";
-import { getCookie } from "cookies-next";
 
 export default function Login() {
   const [isSignIn, setIsSignIn] = useState(true);
