@@ -50,6 +50,7 @@ function CategoryFilterButton({
     <Box sx={{ display: "flex", flexWrap: "wrap", gap: "32px", mb: "48px" }}>
       {category.map((item) => (
         <Box
+          onClick={() => setCategory(item.name)}
           key={item.id}
           sx={{
             display: "flex",
@@ -77,7 +78,6 @@ function CategoryFilterButton({
               fontWeight: "300",
               textAlign: "center",
             }}
-            onClick={() => setCategory(item.name)}
           >
             {item.name}
           </Typography>
