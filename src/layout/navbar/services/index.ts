@@ -1,22 +1,33 @@
 import { BASE_URL } from "@/constants/urls";
 import axios from "axios";
-import { IUser, IUserSignInForm } from "../hooks/types";
+import { ICart, IUser, IUserSignInForm, IWishlist } from "../hooks/types";
 import { getCookie, setCookie, deleteCookie } from "cookies-next";
 
-export const signUpNewUser = async (newUserData: IUser) => {
+export const signUpNewUser = async (
+  newUserData: IUser,
+  cartData: ICart,
+  wishlistData: IWishlist
+) => {
   try {
     const existingUsersDatabase = await axios.get(`${BASE_URL}/users`);
     const existingUsers = existingUsersDatabase.data;
     const emailExists = existingUsers.some(
       (user: IUser) => user.email === newUserData.email
     );
-    console.log(emailExists);
     if (emailExists) {
       throw new Error("This email is already registered.");
     }
-
-    const response = await axios.post(`${BASE_URL}/users`, newUserData);
-    return response;
+    const userResponse = await axios.post(`${BASE_URL}/users`, newUserData);
+    const cartResponse = await axios.post(`${BASE_URL}/cart`, cartData);
+    const wishlistResponse = await axios.post(
+      `${BASE_URL}/wishlist`,
+      wishlistData
+    );
+    return {
+      user: userResponse.data,
+      cart: cartResponse.data,
+      wishlist: wishlistResponse.data,
+    };
   } catch (error) {
     if (axios.isAxiosError(error) && !error.response) {
       throw new Error("Network error, please try again later.");
@@ -57,6 +68,10 @@ export const fetchIdCookie = () => {
   return getCookie("userId");
 };
 
+export const fetchRoleCookie = () => {
+  return getCookie("role");
+};
+
 export const setAccessCookie = (value: boolean) => {
   const accessValue = value ? "true" : "false";
   setCookie("access", accessValue, { maxAge: 3600, path: "/" });
@@ -66,10 +81,18 @@ export const setIdCookie = (value: number) => {
   setCookie("userId", String(value), { maxAge: 3600, path: "/" });
 };
 
+export const setRoleCookie = (value: number) => {
+  setCookie("role", String(value), { maxAge: 3600, path: "/" });
+};
+
 export const removeAccessCookie = () => {
   deleteCookie("access", { path: "/" });
 };
 
 export const removeIdCookie = () => {
   deleteCookie("userId", { path: "/" });
+};
+
+export const removeRoleCookie = () => {
+  deleteCookie("role", { path: "/" });
 };
