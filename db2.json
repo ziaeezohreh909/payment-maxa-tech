@@ -6,42 +6,43 @@
       "email": "koushyar@gmail.com",
       "password": "123456",
       "role": ""
+    },
+    {
+      "id": 1718584028561,
+      "userName": "soroush",
+      "email": "soroush@gmail.com",
+      "password": "123456",
+      "role": "normal"
     }
   ],
   "cart": [
     {
-      "userId": "1",
-      "cartProducts": {
-        "productId": "1",
-        "quantity": 3,
-        "color": ""
-      }
+      "id": 1,
+      "cartProducts": [
+        {
+          "productId": "1",
+          "quantity": 3,
+          "color": ""
+        }
+      ]
     },
     {
-      "userId": "2",
-      "cartProducts": {
-        "productId": "1",
-        "quantity": 2,
-        "color": ""
-      }
+      "id": 1718584028561,
+      "cartProducts": []
     }
   ],
   "wishlist": [
     {
       "userId": "1",
-      "cartProducts": {
+      "wishlistProducts": {
         "productId": "1",
         "quantity": 3,
         "color": ""
       }
     },
     {
-      "userId": "2",
-      "cartProducts": {
-        "productId": "1",
-        "quantity": 2,
-        "color": ""
-      }
+      "id": 1718584028561,
+      "wishlistProducts": []
     }
   ],
   "products": [
