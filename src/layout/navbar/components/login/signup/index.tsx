@@ -33,23 +33,35 @@ export default function SignUp({ setIsSignIn, onClose }: Props) {
   } = useForm();
 
   const onSubmit = (formData: any) => {
+    const universalId = Date.now();
     const userData = {
-      id: Date.now(),
+      id: universalId,
       userName: formData.name,
       email: formData.email,
       password: formData.password,
       role: "normal",
     };
-    mutate(userData, {
-      onSuccess: (response) => {
-        setIdCookie(userData.id);
-        setAccessCookie(true);
-        onClose();
-      },
-      onError: (error) => {
-        console.error("Sign-up failed:", error.message);
-      },
-    });
+    const cartData = {
+      id: universalId,
+      cartProducts: [],
+    };
+    const wishlistData = {
+      id: universalId,
+      wishlistProducts: [],
+    };
+    mutate(
+      { newUserData: userData, cartData, wishlistData },
+      {
+        onSuccess: () => {
+          setIdCookie(userData.id);
+          setAccessCookie(true);
+          onClose();
+        },
+        onError: (error) => {
+          console.error("Sign-up failed:", error.message);
+        },
+      }
+    );
   };
 
   return (
