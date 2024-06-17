@@ -11,3 +11,21 @@ export interface IUserSignInForm {
   password: string;
   remember: boolean;
 }
+
+export interface ICart {
+  id: number;
+  cartProducts: {
+    productId: string;
+    quantity: number;
+    color: string;
+  }[];
+}
+
+export interface IWishlist {
+  id: number;
+  wishlistProducts: {
+    productId: string;
+    quantity: number;
+    color: string;
+  }[];
+}
