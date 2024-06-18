@@ -60,6 +60,19 @@ export const getUserInfo = async () => {
   return response.data;
 };
 
+export const getCartItems = async (userId) => {
+  // const userId = fetchIdCookie();
+  const response = await axios.get(`${BASE_URL}/cart/${userId}`);
+  // queryClient.invalidateQueries({ queryKey: ["cartItems"] });
+  return response.data.cartProducts;
+};
+
+export const getCartItemDetails = async (productId: number) => {
+  const response = await axios.get(`${BASE_URL}/products/${productId}`);
+  return response.data;
+};
+
+// Cookie functions
 export const fetchAccessCookie = () => {
   return getCookie("access") === "true";
 };
@@ -81,7 +94,7 @@ export const setIdCookie = (value: number) => {
   setCookie("userId", String(value), { maxAge: 3600, path: "/" });
 };
 
-export const setRoleCookie = (value: number) => {
+export const setRoleCookie = (value: string) => {
   setCookie("role", String(value), { maxAge: 3600, path: "/" });
 };
 
