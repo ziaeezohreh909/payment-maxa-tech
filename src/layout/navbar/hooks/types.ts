@@ -12,13 +12,15 @@ export interface IUserSignInForm {
   remember: boolean;
 }
 
+export interface ICartProducts {
+  productId: number;
+  quantity: number;
+  color: string;
+}
+
 export interface ICart {
   id: number;
-  cartProducts: {
-    productId: string;
-    quantity: number;
-    color: string;
-  }[];
+  cartProducts: ICartProducts[];
 }
 
 export interface IWishlist {
