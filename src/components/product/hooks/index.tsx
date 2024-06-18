@@ -6,5 +6,6 @@ export const useGetAllProducts = (category: string | undefined) => {
   return useQuery<IProduct[]>({
     queryKey: ["products", category],
     queryFn: () => getAllProducts(category),
+    refetchOnWindowFocus: false,
   });
 };
