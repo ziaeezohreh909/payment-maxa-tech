@@ -12,11 +12,8 @@ import { IProduct } from "../../hooks/types";
 
 export default function TechnicalDetails({ detail }: { detail: IProduct }) {
   return (
-    <Box>
-      <Typography
-        sx={{ mt: "32px", mb: "16px", fontSize: "20px", fontWeight: "500" }}
-        gutterBottom
-      >
+    <Box marginBottom={"48px"}>
+      <Typography variant="h6" gutterBottom marginTop={1.5}>
         Technical Details
       </Typography>
       <TableContainer
