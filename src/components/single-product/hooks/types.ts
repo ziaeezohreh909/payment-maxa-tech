@@ -33,3 +33,11 @@ export interface Discount {
   startDate: string;
   endDate: string;
 }
+
+export interface commentType {
+  [x: string]: any;
+  id: string;
+  name: string;
+  avatar: string;
+  comment: string;
+}
