@@ -22,7 +22,7 @@ const pages = [
   ["Home", "/"],
   ["Products", "/products"],
   ["Blog", "/blog"],
-  ["FAQ", "/faq"],
+  ["FAQ", "/FAQ"],
   ["About Us", "/about-us"],
 ];
 
@@ -59,12 +59,14 @@ export default function Navbar() {
               justifyContent="space-between"
               alignItems="center"
             >
-              <Box
-                component="img"
-                src={logo.src}
-                alt="Logo"
-                sx={{ height: "63px", width: "56px", marginRight: 2 }}
-              />
+              <Link href={"/"}>
+                <Box
+                  component="img"
+                  src={logo.src}
+                  alt="Logo"
+                  sx={{ height: "63px", width: "56px", marginRight: 2 }}
+                />
+              </Link>
 
               <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                 <IconButton
@@ -144,6 +146,11 @@ export default function Navbar() {
                 sx={{ flexGrow: 0 }}
               >
                 <SearchPopup />
+                {/* {hasAccess ? (
+                  <CartMenu />
+                ) : (
+                  <Box>Please sign in to see your cart!</Box>
+                )} */}
                 <CartMenu />
                 {hasAccess ? <AccountMenu /> : <Login />}
               </Stack>
