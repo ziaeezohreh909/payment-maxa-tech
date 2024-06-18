@@ -4,10 +4,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Box, Typography } from "@mui/material";
-import { IProduct } from "@/components/home/hooks/types";
 import Card from "@/components/shared/card/components";
+import { IProduct } from "@/components/home/hooks/types";
 
 type Props = {
   products: IProduct[];
@@ -15,11 +15,9 @@ type Props = {
 
 export default function SimilarProductsSlider({ products }: Props) {
   return (
-    <Box marginTop={"46px"} marginBottom={"48px"} height={"403px"}>
+    <Box marginTop={"16px"} marginBottom={"48px"} height={"403px"}>
       <Box>
-        <Typography
-          sx={{ mt: "46px", mb: "32px", fontSize: "20px", fontWeight: "500" }}
-        >
+        <Typography marginBottom={"32px"} fontSize={"20px"}>
           Similar Products
         </Typography>
       </Box>
@@ -49,7 +47,7 @@ export default function SimilarProductsSlider({ products }: Props) {
         >
           {products?.map((product) => (
             <SwiperSlide key={product.id}>
-              <Box padding={"5px"}>
+              <Box padding={"1px"}>
                 <Card
                   cardProps={product}
                   hoverMode={{ hoverMode: "productHover" }}
