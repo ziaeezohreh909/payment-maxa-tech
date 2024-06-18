@@ -18,7 +18,11 @@ import dollarCircle from "@/assets/images/account-menu-icons/dollar-circle.png";
 import logout from "@/assets/images/account-menu-icons/logout.png";
 import user from "@/assets/images/navbar-icons/user.png";
 import { useGetUserInfo } from "../../hooks";
-import { removeAccessCookie, removeIdCookie } from "../../services";
+import {
+  removeAccessCookie,
+  removeIdCookie,
+  removeRoleCookie,
+} from "../../services";
 
 export default function AccountMenu() {
   const { data: userInfo } = useGetUserInfo();
@@ -36,6 +40,7 @@ export default function AccountMenu() {
   const handleLogOut = () => {
     removeAccessCookie();
     removeIdCookie();
+    removeRoleCookie();
     handleCloseAccountMenu();
   };
 
