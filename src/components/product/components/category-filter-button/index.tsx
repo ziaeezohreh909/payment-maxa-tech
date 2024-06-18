@@ -1,5 +1,5 @@
 import { Box, CardMedia, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import accessories from "@/assets/images/categories-icons/Accessories.svg";
 import camera from "@/assets/images/categories-icons/camera.svg";
 import laptop from "@/assets/images/categories-icons/monitor.svg";
@@ -46,11 +46,19 @@ function CategoryFilterButton({
 }: {
   setCategory: React.Dispatch<React.SetStateAction<string>>;
 }) {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const handleCategoryClick = (name: string) => {
+    setActiveCategory(name);
+    setCategory(name);
+  };
+
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap", gap: "32px", mb: "48px" }}>
       {category.map((item) => (
         <Box
-          onClick={() => setCategory(item.name)}
+          // onClick={() => setCategory(item.name)}
+          onClick={() => handleCategoryClick(item.name)}
           key={item.id}
           sx={{
             display: "flex",
@@ -60,6 +68,8 @@ function CategoryFilterButton({
             height: "108px",
             padding: "8px",
             cursor: "pointer",
+            borderBottom:
+              activeCategory === item.name ? "3px solid #1b8cee" : "none",
           }}
         >
           <CardMedia
