@@ -14,8 +14,8 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import SendIcon from "@mui/icons-material/Send";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useForm } from "react-hook-form";
-import { usePostData } from "../../hook"; // Adjust the import based on your file structure
-import { IProduct } from "@/components/home/hooks/types"; // Adjust the import based on your file structure
+import { usePostData } from "../../hook";
+import { IProduct } from "@/components/home/hooks/types";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -81,7 +81,7 @@ function AddProducts() {
 
   return (
     <>
-      <ToastContainer /> 
+      <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)} action="">
         <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
           <Box
