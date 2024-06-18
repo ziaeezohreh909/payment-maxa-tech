@@ -1,11 +1,12 @@
 import { Box, Button, CardMedia, Divider, Typography } from "@mui/material";
 
 import React from "react";
-import CollorPallet from "./color-pallet";
+// import CollorPallet from "./color-pallet";
 import heart from "@/assets/images/heart.svg";
 import { IProduct } from "@/components/home/hooks/types";
 import Link from "next/link";
 import shoppingCard from "@/assets/images/shopping-cart.svg";
+import { addToCart } from "../services";
 
 type Hover = {
   hoverMode: "landingHover" | "productHover";
@@ -20,6 +21,7 @@ export default function Card({ cardProps, hoverMode }: CardProps) {
   const handleAddToCartClick = (event: React.MouseEvent) => {
     event.stopPropagation();
     event.preventDefault();
+    addToCart(cardProps.id);
   };
 
   const handleAddToWishList = (event: React.MouseEvent) => {
