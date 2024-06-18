@@ -1,15 +1,15 @@
-import {
-  Box,
-  IconButton,
-  ListItemIcon,
-  Menu,
-  MenuItem,
-  Tooltip,
-} from "@mui/material";
+import { Box, Button, IconButton, Menu, Stack, Tooltip } from "@mui/material";
 import React from "react";
 import bag from "@/assets/images/navbar-icons/bag.png";
+import { useAccessCookie, useGetCartItems } from "../../hooks";
+import CartItem from "./cart-item";
+import { ICartProducts } from "../../hooks/types";
+import { fetchIdCookie } from "../../services";
 
 export default function CartMenu() {
+  const { data: hasAccess } = useAccessCookie();
+  const userId = fetchIdCookie();
+  const { data: cartItems } = useGetCartItems(userId);
   const [anchorElCart, setAnchorElCart] = React.useState<null | HTMLElement>(
     null
   );
@@ -20,12 +20,13 @@ export default function CartMenu() {
     setAnchorElCart(null);
   };
 
+  console.log(cartItems);
+
   return (
     <Box>
       {anchorElCart && (
         <Box
           sx={{
-            // height: "100vh",
             position: "fixed",
             top: "117px",
             left: 0,
@@ -42,6 +43,7 @@ export default function CartMenu() {
           <Box component="img" src={bag.src} />
         </IconButton>
       </Tooltip>
+
       <Menu
         sx={{ mt: "73px" }}
         id="menu-appbar"
@@ -58,20 +60,85 @@ export default function CartMenu() {
         open={Boolean(anchorElCart)}
         onClose={handleCloseCartMenu}
       >
-        {/* {settings.map((setting) => (
-          <MenuItem key={setting.text} onClick={handleCloseAccountMenu}>
-            <ListItemIcon>
-              <Box component="img" src={setting.icon.src} />
-            </ListItemIcon>
-            <Box
-              textAlign="left"
-              sx={{ color: "black", fontSize: "18px", fontWeight: "light" }}
-            >
-              {setting.text}
-            </Box>
-          </MenuItem>
-        ))} */}
-        <Box sx={{ width: "512px", height: "700px" }}></Box>
+        <Stack
+          direction={"column"}
+          justifyContent={"space-between"}
+          sx={{
+            width: "512px",
+            maxHeight: "712px",
+            padding: "24px",
+            display: "flex",
+          }}
+        >
+          {hasAccess ? (
+            cartItems?.length > 0 ? (
+              <Box>
+                <Box sx={{ fontSize: "18px", mb: "24px" }}>
+                  {cartItems?.length} Items
+                </Box>
+                <Stack
+                  sx={{
+                    width: "464px",
+                    maxHeight: "565px",
+                    pb: "18px",
+                    overflowY: "auto",
+                    "&::-webkit-scrollbar": {
+                      width: "6px",
+                    },
+                    "&::-webkit-scrollbar-track": {
+                      backgroundColor: "#f1f1f1",
+                      borderRadius: "10px",
+                    },
+                    "&::-webkit-scrollbar-thumb": {
+                      backgroundColor: "#888",
+                      borderRadius: "10px",
+                    },
+                    "&::-webkit-scrollbar-thumb:hover": {
+                      backgroundColor: "#555",
+                    },
+                  }}
+                  direction="column"
+                  spacing={2}
+                  justifyContent={"felx-start"}
+                  alignItems={"center"}
+                >
+                  {cartItems &&
+                    cartItems.map((item: ICartProducts) => (
+                      <CartItem key={item.productId} cartItemProps={item} />
+                    ))}
+                </Stack>
+                <Stack height={"48px"} direction={"row"} alignItems={"center"}>
+                  <Stack direction={"column"} sx={{ mr: "32px" }}>
+                    <Box sx={{ fontSize: "14px", fontWeight: "300" }}>
+                      Grand total
+                    </Box>
+                    <Box>$557</Box>
+                  </Stack>
+                  <Button
+                    sx={{
+                      height: "100%",
+                      flexGrow: "1",
+                      backgroundColor: "#0C68F4",
+                      color: "white",
+                      textTransform: "none",
+                      fontSize: "16px",
+                      fontWeight: "300",
+                      "&:hover": {
+                        backgroundColor: "#005BB5",
+                      },
+                    }}
+                  >
+                    Proceed to Cart
+                  </Button>
+                </Stack>
+              </Box>
+            ) : (
+              <Box>Your cart is empty.</Box>
+            )
+          ) : (
+            <Box> Please log in to see your cart items.</Box>
+          )}
+        </Stack>
       </Menu>
     </Box>
   );
