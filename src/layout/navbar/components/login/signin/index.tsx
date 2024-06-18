@@ -13,8 +13,11 @@ import {
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { useForm } from "react-hook-form";
-import { setAccessCookie, setIdCookie } from "@/layout/navbar/services";
-import { IUserSignInForm } from "@/layout/navbar/hooks/types";
+import {
+  setAccessCookie,
+  setIdCookie,
+  setRoleCookie,
+} from "@/layout/navbar/services";
 import { useSignInUser } from "@/layout/navbar/hooks";
 
 type Props = {
@@ -35,6 +38,7 @@ export default function SignIn({ setIsSignIn, onClose }: Props) {
       onSuccess: (response) => {
         setIdCookie(response.id);
         setAccessCookie(true);
+        setRoleCookie(response.role);
         onClose();
       },
       onError: (error) => {
