@@ -1,10 +1,13 @@
 import FAQ from "@/components/FAQ/components";
 import Layout from "@/layout";
+import { NextPageWithLayout } from "../_app";
 
-export default function FAQPage() {
-  return (
-    <Layout>
-      <FAQ />
-    </Layout>
-  );
-}
+const FAQPage: NextPageWithLayout = () => {
+  return <FAQ />;
+};
+
+FAQPage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
+export default FAQPage;

@@ -1,13 +1,13 @@
 import Home from "@/components/home/components";
 import Layout from "@/layout";
-import { Inter } from "next/font/google";
+import { NextPageWithLayout } from "./_app";
 
-const inter = Inter({ subsets: ["latin"] });
+const HomePage: NextPageWithLayout = () => {
+  return <Home />;
+};
 
-export default function HomePage() {
-  return (
-    <Layout>
-      <Home />
-    </Layout>
-  );
-}
+HomePage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
+export default HomePage;
