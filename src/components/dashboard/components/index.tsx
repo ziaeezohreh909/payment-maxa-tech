@@ -63,7 +63,7 @@ export default function BasicTabs() {
     </Link>,
   ];
   return (
-    <Box sx={{ width: "100%", mb: "48px" }}>
+    <Box sx={{ width: "100%", height: "62vh", mb: "150px" }}>
       <Stack sx={{ mb: "48px" }} spacing={2} p={2}>
         <Breadcrumbs
           separator={

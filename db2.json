@@ -41,6 +41,13 @@
       "email": "zohre@gmail.com",
       "password": "123456",
       "role": "normal"
+    },
+    {
+      "id": 1718726856860,
+      "userName": "Mr. Hoseini",
+      "email": "hoseini@gmail.com",
+      "password": "123456",
+      "role": "normal"
     }
   ],
   "cart": [
@@ -57,6 +64,16 @@
     {
       "id": 1718584028561,
       "cartProducts": [
+        {
+          "productId": 83,
+          "quantity": 1,
+          "color": ""
+        },
+        {
+          "productId": 48,
+          "quantity": 1,
+          "color": ""
+        },
         {
           "productId": 49,
           "quantity": 2,
@@ -89,7 +106,7 @@
         },
         {
           "productId": 9,
-          "quantity": 2,
+          "quantity": 3,
           "color": ""
         },
         {
@@ -173,6 +190,21 @@
           "color": ""
         }
       ]
+    },
+    {
+      "id": 1718726856860,
+      "cartProducts": [
+        {
+          "productId": 33,
+          "quantity": 1,
+          "color": ""
+        },
+        {
+          "productId": 22,
+          "quantity": 2,
+          "color": ""
+        }
+      ]
     }
   ],
   "wishlist": [
@@ -203,12 +235,16 @@
     {
       "id": 1718649651917,
       "wishlistProducts": []
+    },
+    {
+      "id": 1718726856860,
+      "wishlistProducts": []
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Dell XPS 13 Laptop",
+      "name": "Dell XPS 14 Laptop",
       "upc": "884116366808",
       "shortDescription": "Powerful laptop with Intel Core i7 processor and 16GB RAM.",
       "longDescription": "The Dell XPS 13 laptop is perfect for work, school, or entertainment. It features a fast Intel Core i7 processor, 16GB of RAM, and a spacious 512GB SSD.",
@@ -2943,6 +2979,36 @@
         "startDate": null,
         "endDate": null
       }
+    },
+    {
+      "id": 99999,
+      "name": "kbljkhb",
+      "categoryName": ";oij;olih",
+      "price": 99999,
+      "longDescription": "lkjhvljkhbvfljkbh;fkvjb;kjb",
+      "shortDescription": "laptop",
+      "thumbnailImage": "https://dkstatics-public.digikala.com/digikala-products/c1f5860938d7dc087df2dddc1dccf07aa63f1d02_1694265753.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90",
+      "discount": {
+        "percent": "",
+        "startDate": "",
+        "endDate": ""
+      },
+      "dimensions": {
+        "width": "",
+        "height": "",
+        "depth": ""
+      },
+      "customerRating": 4.9,
+      "numReviews": 1694,
+      "upc": "iotm1",
+      "currency": "USD",
+      "availableOnline": true,
+      "availableInStore": true,
+      "seller": "Random Seller",
+      "sellerId": "random123",
+      "largeImage": "https://example.com/random-large-image.jpg",
+      "categoryPath": "Random Category",
+      "brandName": "Random Brand"
     }
   ]
 }
