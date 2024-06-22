@@ -16,10 +16,11 @@ export default function Cart() {
       <Stack direction={"column"}>
         <Stack>
           <Stack direction={"column"}>
-            {cartItems?.map((item) => (
+            {cartItems?.map((item:any) => (
               <CartItem cartItemProps={item} />
             ))}
           </Stack>
+          <Stack>cartpayment</Stack>
         </Stack>
         <Stack direction={"column"}>
           <Typography>
