@@ -160,6 +160,11 @@
       "id": 1718641285326,
       "cartProducts": [
         {
+          "productId": 5,
+          "quantity": 1,
+          "color": ""
+        },
+        {
           "productId": 3,
           "quantity": 1,
           "color": ""

@@ -12,6 +12,5 @@ function shuffleArray(array: IProduct[]): IProduct[] {
 
 export async function getProduct(): Promise<IProduct[]> {
   const res = await axios.get(`${BASE_URL}/products?&_limit=4`);
-  console.log(res.data);
   return shuffleArray(res.data);
 }

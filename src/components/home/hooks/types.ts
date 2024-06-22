@@ -1,4 +1,5 @@
 export interface IProduct {
+  productId: Key | null | undefined;
   id: number;
   name: string;
   upc: string;
