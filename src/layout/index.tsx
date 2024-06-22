@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import Footer from "./footer";
-import Navbar from "./navbar";
+import Navbar from "./navbar/components";
 import { Box } from "@mui/material";
 
 type LayoutProps = { children: ReactNode };

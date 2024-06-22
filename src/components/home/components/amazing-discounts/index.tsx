@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import SVG_BG from "@/assets/images/random-shape-in-blue-png 2.svg";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import Card from "@/components/shared/card";
+import Card from "@/components/shared/card/components";
 import {
   ArrowForwardIosOutlined,
   ArrowLeft,

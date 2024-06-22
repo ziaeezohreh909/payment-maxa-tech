@@ -25,6 +25,10 @@ import Visa from "@/assets/images/footer-icons/visa.svg";
 import MasterCard from "@/assets/images/footer-icons/master card.svg";
 
 export default function Footer() {
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Box>
       <Box
@@ -51,7 +55,7 @@ export default function Footer() {
                 <Typography variant="body1" sx={{ color: "white" }}>
                   Company
                 </Typography>
-                <Link href="#">About us</Link>
+                <Link href="/about-us">About us</Link>
                 <Link href="#">Blog</Link>
                 <Link href="#">Returns</Link>
                 <Link href="#">Order Status</Link>
@@ -62,25 +66,28 @@ export default function Footer() {
                 </Typography>
                 <Link href="#">How it works?</Link>
                 <Link href="#">Our Promises</Link>
-                <Link href="#">FAQ</Link>
+                <Link href="/FAQ">FAQ</Link>
               </Box>
-              <Box display="flex" flexDirection="column" gap={1}>
-                <Typography variant="body1" sx={{ color: "white" }}>
-                  Contact Us
-                </Typography>
-                <Typography fontWeight="300">
-                  <LocationOnOutlinedIcon />
-                  123 Main Street, Tehran, Iran
-                </Typography>
-                <Typography fontWeight="300">
-                  <CallOutlinedIcon />
-                  <span> +98 (912) 123-4567</span>
-                </Typography>
-                <Typography fontWeight="300">
-                  <EmailOutlinedIcon />
-                  <span> MaxaTechSupport@gmail.com</span>
-                </Typography>
-              </Box>
+              <Link href="/contact-us">
+                <Box display="flex" flexDirection="column" gap={1}>
+                  <Typography variant="body1" sx={{ color: "white" }}>
+                    Contact Us
+                  </Typography>
+                  <Typography fontWeight="300">
+                    <LocationOnOutlinedIcon />
+                    123 Main Street, Tehran, Iran
+                  </Typography>
+                  <Typography fontWeight="300">
+                    <CallOutlinedIcon />
+                    <span> +98 (912) 123-4567</span>
+                  </Typography>
+                  <Typography fontWeight="300">
+                    <EmailOutlinedIcon />
+                    <span> MaxaTechSupport@gmail.com</span>
+                  </Typography>
+                </Box>
+              </Link>
+
               <Box display="flex" flexDirection="column" gap={1}>
                 <Typography variant="body1" sx={{ color: "white" }}>
                   Sign Up for News and Updates
@@ -134,7 +141,7 @@ export default function Footer() {
                 <Box component="img" src={OnlineChat.src} />
               </Box>
             </Box>
-            <Box display="flex" justifyContent="end">
+            <Box onClick={handleBackToTop} display="flex" justifyContent="end">
               <Box component="img" src={BackToUp.src} />
             </Box>
             <Box display="flex" gap="2px">

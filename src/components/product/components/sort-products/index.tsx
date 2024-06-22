@@ -10,7 +10,11 @@ export default function SortProduct() {
       {(popupState) => (
         <React.Fragment>
           <Button
-            sx={{ border: "solid 1px black", color: "black" }}
+            sx={{
+              border: "solid 1px black",
+              color: "black",
+              textTransform: "none",
+            }}
             {...bindTrigger(popupState)}
           >
             Sort by: featured

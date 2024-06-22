@@ -1,6 +1,6 @@
-import { getProductByCategory, getProductById } from "../services";
+import { getCommentData, getProductByCategory, getProductById } from "../services";
 import { useQuery } from "@tanstack/react-query";
-import { IProduct } from "./types";
+import { IProduct, commentType } from "./types";
 
 export const useGetProductById = (id: number) => {
   return useQuery<IProduct>({
@@ -17,5 +17,12 @@ export const useGetProductByCategory = (category: string, id: number) => {
     queryFn: () => getProductByCategory(category),
     enabled: !!category,
     refetchOnWindowFocus: false,
+  });
+};
+
+export const useGetCommentData = () => {
+  return useQuery<commentType[]>({
+    queryKey: ["comments"],
+    queryFn: getCommentData,
   });
 };

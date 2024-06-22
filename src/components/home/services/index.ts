@@ -3,14 +3,14 @@ import axios from "axios";
 
 export const getBestSellers = async () => {
   const response = await axios.get(
-    `${BASE_URL}?_sort=numReviews&_order=desc&_limit=4`
+    `${BASE_URL}/products?_sort=numReviews&_order=desc&_limit=4`
   );
   return response.data;
 };
 
 export const getProductsWithBiggestDiscount = async () => {
   const response = await axios.get(
-    `${BASE_URL}?_sort=discount.percent&_order=desc&_limit=10`
+    `${BASE_URL}/products?_sort=discount.percent&_order=desc&_limit=10`
   );
   return response.data;
 };
@@ -27,7 +27,7 @@ export const getNewProducts = async () => {
     const newProductsPromises = fourCategoriesToPickTheMostExpensiveOf.map(
       async (categoryName) => {
         const response = await axios.get(
-          `${BASE_URL}?categoryName=${categoryName}&_sort=price&_order=desc&_limit=1`
+          `${BASE_URL}/products?categoryName=${categoryName}&_sort=price&_order=desc&_limit=1`
         );
         return response.data[0];
       }

@@ -3,19 +3,12 @@ import {
   Divider,
   FormControl,
   FormControlLabel,
-  MenuItem,
   Radio,
   RadioGroup,
-  Select,
-  SelectChangeEvent,
   Typography,
 } from "@mui/material";
-import { relative } from "path";
-import React, { useState } from "react";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import React from "react";
 import { CheckCircleRounded } from "@mui/icons-material";
-import { blue, red } from "@mui/material/colors";
-import { useRouter } from "next/router";
 import { IProduct } from "@/components/home/hooks/types";
 
 import frameDelivery from "@/assets/images/single-product-assets/frameDelivery.svg";
@@ -57,12 +50,11 @@ export default function SingleProduct({ product }: { product: IProduct }) {
             gap={"12px"}
             flexDirection={"column"}
           >
-            <Box component={"img"} src={heart.src}></Box>
-            <Box component={"img"} src={notification.src}></Box>
-            <Box component={"img"} src={directboxSend.src}></Box>
+            <Box component={"img"} src={heart.src} />
+            <Box component={"img"} src={notification.src} />
+            <Box component={"img"} src={directboxSend.src} />
           </Box>
         </Box>
-        <Box></Box>
       </Box>
       <Box
         width={"343px"}

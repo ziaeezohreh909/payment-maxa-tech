@@ -78,12 +78,24 @@ export default function CustomizedAccordions() {
   const label = { inputProps: { "aria-label": "Size switch demo" } };
 
   return (
-    <Box sx={{ mt: 2, width: "100%" }}>
-      <Box sx={{ display: "flex", justifyContent: "space-between", pr: 5 }}>
-        <Typography sx={{ fontWeight: "bold" }}>Filters</Typography>
+    <Box sx={{ width: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          p: "16px",
+        }}
+      >
+        <Typography sx={{ fontWeight: "bold", fontSize: "20px" }}>
+          Filters
+        </Typography>
         <Typography
           sx={{
-            fontWeight: "bold",
+            fontWeight: "400",
+            fontSize: "16px",
+            mt: "3px",
+            mx: "52px",
             ":hover": { textDecoration: "underline" },
             cursor: "pointer",
           }}
@@ -110,16 +122,16 @@ export default function CustomizedAccordions() {
           aria-controls="panel1d-content"
           id="panel1d-header"
         >
-          <Typography>Categorys</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Brand</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <FormControlLabel control={<Checkbox />} label="Accessories" />
-            <FormControlLabel control={<Checkbox />} label="Camera" />
-            <FormControlLabel control={<Checkbox />} label="Laptop" />
-            <FormControlLabel control={<Checkbox />} label="Smart Phone" />
-            <FormControlLabel control={<Checkbox />} label="Gaming" />
-            <FormControlLabel control={<Checkbox />} label="Smart Watch" />
+          <Box
+            sx={{ display: "flex", flexDirection: "column", fontSize: "20px" }}
+          >
+            <FormControlLabel control={<Checkbox />} label="Asus" />
+            <FormControlLabel control={<Checkbox />} label="Acer" />
+            <FormControlLabel control={<Checkbox />} label="Apple" />
+            <FormControlLabel control={<Checkbox />} label="Dell" />
           </Box>
         </AccordionDetails>
       </Accordion>
@@ -141,7 +153,7 @@ export default function CustomizedAccordions() {
           aria-controls="panel3d-content"
           id="panel3d-header"
         >
-          <Typography>Price</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Price</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Box sx={{ width: "100%" }}>
@@ -183,7 +195,7 @@ export default function CustomizedAccordions() {
           borderColor: "#e0e0e0",
         }}
       >
-        <Typography>Discount </Typography>
+        <Typography sx={{ fontSize: "20px" }}>Discount </Typography>
         <Switch {...label} />
       </Box>
       <Accordion
@@ -204,10 +216,12 @@ export default function CustomizedAccordions() {
           aria-controls="panel2d-content"
           id="panel2d-header"
         >
-          <Typography>Color</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Color</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: "column", fontSize: "20px" }}
+          >
             <FormControlLabel control={<Checkbox />} label="Gray" />
             <FormControlLabel control={<Checkbox />} label="silver" />
             <FormControlLabel control={<Checkbox />} label="golden" />
@@ -234,10 +248,12 @@ export default function CustomizedAccordions() {
           aria-controls="panel4d-content"
           id="panel4d-header"
         >
-          <Typography>RAM</Typography>
+          <Typography sx={{ fontSize: "20px" }}>RAM</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: "column", fontSize: "20px" }}
+          >
             <FormControlLabel control={<Checkbox />} label="32 GB" />
             <FormControlLabel control={<Checkbox />} label="16  GB" />
             <FormControlLabel control={<Checkbox />} label="12  GB" />
@@ -263,10 +279,12 @@ export default function CustomizedAccordions() {
           aria-controls="panel5d-content"
           id="panel5d-header"
         >
-          <Typography>Screen Size</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Screen Size</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: "column", fontSize: "20px" }}
+          >
             <FormControlLabel control={<Checkbox />} label={`13" - 13.9"`} />
             <FormControlLabel control={<Checkbox />} label={`14" - 14.9"`} />
             <FormControlLabel control={<Checkbox />} label={`15" - 15.9"`} />
@@ -292,10 +310,12 @@ export default function CustomizedAccordions() {
           aria-controls="panel6d-content"
           id="panel6d-header"
         >
-          <Typography>Processor</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Processor</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: "column", fontSize: "20px" }}
+          >
             <FormControlLabel control={<Checkbox />} label="Intel Core i5" />
             <FormControlLabel control={<Checkbox />} label="Intel Core i7" />
             <FormControlLabel control={<Checkbox />} label="Intel Core i9" />
@@ -321,10 +341,12 @@ export default function CustomizedAccordions() {
           aria-controls="panel7d-content"
           id="panel7d-header"
         >
-          <Typography>GPU Brand</Typography>
+          <Typography sx={{ fontSize: "20px" }}>GPU Brand</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: "column", fontSize: "20px" }}
+          >
             <FormControlLabel control={<Checkbox />} label="NVIDA" />
             <FormControlLabel control={<Checkbox />} label="Intel" />
             <FormControlLabel control={<Checkbox />} label="AMD" />
@@ -350,10 +372,12 @@ export default function CustomizedAccordions() {
           aria-controls="panel8d-content"
           id="panel8d-header"
         >
-          <Typography>Drive Size</Typography>
+          <Typography sx={{ fontSize: "20px" }}>Drive Size</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: "column", fontSize: "20px" }}
+          >
             <FormControlLabel control={<Checkbox />} label="512GB" />
             <FormControlLabel control={<Checkbox />} label="256GB" />
             <FormControlLabel control={<Checkbox />} label="64GB" />

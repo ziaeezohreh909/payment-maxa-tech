@@ -1,23 +1,14 @@
 import SingleProductWidget from "@/components/single-product/components";
 import Layout from "@/layout";
-import { QueryClient } from "@tanstack/react-query";
+import { NextPageWithLayout } from "@/pages/_app";
 import React from "react";
 
-type Props = {};
+const SingleProductPage: NextPageWithLayout = () => {
+  return <SingleProductWidget />;
+};
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 0,
-      staleTime: 50 * 1000,
-    },
-  },
-});
+SingleProductPage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
 
-export default function SingleProductPage({}: Props) {
-  return (
-    <Layout>
-      <SingleProductWidget />
-    </Layout>
-  );
-}
+export default SingleProductPage;

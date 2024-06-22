@@ -6,12 +6,13 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-// import { AboutUsDescType } from "./AboutUs";
 import aboutUs from "@/assets/images/about-us-images/aboutus.png";
-import { aboutUsDesc } from "@/constants/aboutUs";
-import { aboutUsChoose } from "@/constants/aboutUs";
-import { aboutUsCategories } from "@/constants/aboutUs";
-import { teamMembers } from "@/constants/aboutUs";
+import {
+  aboutUsDesc,
+  aboutUsChoose,
+  aboutUsCategories,
+  teamMembers,
+} from "@/constants/aboutUs";
 
 function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
   event.preventDefault();

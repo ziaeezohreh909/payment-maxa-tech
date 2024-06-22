@@ -12,7 +12,7 @@ import { IProduct } from "../../hooks/types";
 
 export default function TechnicalDetails({ detail }: { detail: IProduct }) {
   return (
-    <Box>
+    <Box marginBottom={"48px"}>
       <Typography variant="h6" gutterBottom marginTop={1.5}>
         Technical Details
       </Typography>

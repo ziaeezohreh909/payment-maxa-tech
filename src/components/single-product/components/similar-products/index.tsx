@@ -4,9 +4,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Box, Typography } from "@mui/material";
-import Card from "@/components/shared/card";
+import Card from "@/components/shared/card/components";
 import { IProduct } from "@/components/home/hooks/types";
 
 type Props = {
@@ -15,9 +15,11 @@ type Props = {
 
 export default function SimilarProductsSlider({ products }: Props) {
   return (
-    <Box marginTop={"46px"} marginBottom={"48px"} height={"403px"}>
+    <Box marginTop={"16px"} marginBottom={"48px"} height={"403px"}>
       <Box>
-        <Typography fontSize={"20px"}>Similar Products</Typography>
+        <Typography marginBottom={"32px"} fontSize={"20px"}>
+          Similar Products
+        </Typography>
       </Box>
       <Box>
         <Swiper

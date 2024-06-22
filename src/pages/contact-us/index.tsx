@@ -1,9 +1,13 @@
-import ContactUs from "@/components/contact-us/index";
+import ContactUs from "@/components/contact-us/components";
 import Layout from "@/layout";
-export default function ContactUsPage() {
-  return (
-    <Layout>
-      <ContactUs />
-    </Layout>
-  );
-}
+import { NextPageWithLayout } from "../_app";
+
+const ContactUsPage: NextPageWithLayout = () => {
+  return <ContactUs />;
+};
+
+ContactUsPage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
+export default ContactUsPage;

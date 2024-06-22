@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box } from "@mui/material";
-import Card from "@/components/shared/card";
+import Card from "@/components/shared/card/components";
 import { IProduct } from "@/components/home/hooks/types";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
