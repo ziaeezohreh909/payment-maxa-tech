@@ -17,32 +17,15 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 
-function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-  event.preventDefault();
-  Router.push("/");
-}
-
 export default function ContactUs() {
   const breadcrumbs = [
-    <Link
-      key="1"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-      className="text-lg font-light text-[#717171]"
-    >
+    <Link key="1" color="inherit" href="/" className="text-lg hover:underline">
       Home
     </Link>,
     <Box key="2">
-      <Typography
-        key="2"
-        color="primary"
-        fontSize="1.125rem"
-        fontWeight="lighter"
-      >
-        Contact Us
+      <Typography fontSize="18px" color="text.primary">
+        Contact us
       </Typography>
-      <Divider className="bg-blue-300" />
     </Box>,
   ];
   return (

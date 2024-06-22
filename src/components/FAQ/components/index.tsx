@@ -32,20 +32,13 @@ export default function FAQ() {
   });
 
   const breadcrumbs = [
-    <Link
-      key="1"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-      className="text-lg font-light text-[#717171]"
-    >
+    <Link key="1" color="inherit" href="/" className="text-lg hover:underline">
       Home
     </Link>,
     <Box key="2">
-      <Typography color="primary" fontSize="1.125rem" fontWeight="lighter">
+      <Typography fontSize="18px" color="text.primary">
         FAQs
       </Typography>
-      <Divider className="bg-blue-300" />
     </Box>,
   ];
 
@@ -112,13 +105,13 @@ export default function FAQ() {
                 >
                   <Typography fontSize="1.5rem" fontWeight="medium">
                     {panel === "panel1" &&
-                      "Can I purchase products from Tech Heim using installment payments?"}
+                      "Can I purchase products from Maxsa Tech  using installment payments?"}
                     {panel === "panel2" &&
-                      "How can I engage with the magazine content on Tech Heim?"}
+                      "How can I engage with the magazine content on Maxsa Tech ?"}
                     {panel === "panel3" &&
-                      "Does Tech Heim offer a warranty on its products?"}
+                      "Does Maxsa Tech  offer a warranty on its products?"}
                     {panel === "panel4" &&
-                      "Is Tech Heim a secure platform for online shopping?"}
+                      "Is Maxsa Tech  a secure platform for online shopping?"}
                     {panel === "panel5" &&
                       "How can I get assistance with my purchase or any other inquiries?"}
                   </Typography>
@@ -126,13 +119,13 @@ export default function FAQ() {
                 <AccordionDetails>
                   <Typography fontSize="1.25rem" fontWeight="light">
                     {panel === "panel1" &&
-                      "Yes, Tech Heim offers the option to purchase products using both cash and installment payments. This allows you to choose the payment method that suits your needs and budget."}
+                      "Yes, Maxsa Tech offers the option to purchase products using both cash and installment payments. This allows you to choose the payment method that suits your needs and budget."}
                     {panel === "panel2" &&
                       "You can actively engage with the magazine content by leaving comments and participating in the question-and-answer section. Feel free to share your thoughts, ask questions, and interact with fellow tech enthusiasts in the community."}
                     {panel === "panel3" &&
-                      "Yes, Tech Heim provides a warranty on all eligible products. The specific warranty details may vary depending on the manufacturer and product category. Please refer to the product description or contact our customer support for more information."}
+                      "Yes, Maxsa Tech provides a warranty on all eligible products. The specific warranty details may vary depending on the manufacturer and product category. Please refer to the product description or contact our customer support for more information."}
                     {panel === "panel4" &&
-                      "Yes, Tech Heim provides a warranty on all eligible products. The specific warranty details may vary depending on the manufacturer and product category. Please refer to the product description or contact our customer support for more information."}
+                      "Yes, Maxsa Tech provides a warranty on all eligible products. The specific warranty details may vary depending on the manufacturer and product category. Please refer to the product description or contact our customer support for more information."}
                     {panel === "panel5" &&
                       "If you need assistance with your purchase or have any questions, our dedicated customer support team is here to help. You can reach out to us through the contact page on our website, and we'll be happy to assist you promptly."}
                   </Typography>

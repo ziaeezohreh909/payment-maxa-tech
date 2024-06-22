@@ -5,7 +5,6 @@ import { useAccessCookie, useGetCartItems } from "../../hooks";
 import CartItem from "./cart-item";
 import { ICartProducts } from "../../hooks/types";
 import { fetchIdCookie } from "../../services";
-import Link from "next/link";
 
 export default function CartMenu() {
   const { data: hasAccess } = useAccessCookie();
@@ -115,26 +114,22 @@ export default function CartMenu() {
                     </Box>
                     <Box>$557</Box>
                   </Stack>
-                  <Stack>
-                    <Link href="/cart">
-                      <Button
-                        sx={{
-                          height: "100%",
-                          flexGrow: "1",
-                          backgroundColor: "#0C68F4",
-                          color: "white",
-                          textTransform: "none",
-                          fontSize: "16px",
-                          fontWeight: "300",
-                          "&:hover": {
-                            backgroundColor: "#005BB5",
-                          },
-                        }}
-                      >
-                        Proceed to Cart
-                      </Button>
-                    </Link>
-                  </Stack>
+                  <Button
+                    sx={{
+                      height: "100%",
+                      flexGrow: "1",
+                      backgroundColor: "#0C68F4",
+                      color: "white",
+                      textTransform: "none",
+                      fontSize: "16px",
+                      fontWeight: "300",
+                      "&:hover": {
+                        backgroundColor: "#005BB5",
+                      },
+                    }}
+                  >
+                    Proceed to Cart
+                  </Button>
                 </Stack>
               </Box>
             ) : (
