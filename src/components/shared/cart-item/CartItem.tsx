@@ -45,16 +45,6 @@ const CartItemDetails = ({ cartItemProps, changeComponent }: Props) => {
           gap={changeComponent === "account" ? 1.25 : "2px"}
         >
           {cartItemDetails?.color && (
-            // {changeComponent === "account" && (
-            //     <Box display="flex" gap={0.5}>
-            //     <Box
-            //       width="14px"
-            //       height="14px"
-            //       sx={{ backgroundColor: cartItemDetails.color }}
-            //       borderRadius="32px"
-            //     />
-            // </Box>
-            //   )}
             <Typography fontSize="10px" fontWeight="500" color="#717171">
               {cartItemDetails.color}
             </Typography>
@@ -149,7 +139,6 @@ const CartItem = ({ cartItemProps, changeComponent }: Props) => {
       <Box display="flex" justifyContent="center" alignItems="center">
         <Box
           component="img"
-          height={changeComponent === "account" ? 196 : 120}
           width={changeComponent === "account" ? 182 : 154}
           src={cartItemDetails?.thumbnailImage}
           ml={1.5}

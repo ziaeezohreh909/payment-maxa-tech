@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import Card from "../shared/card/components";
 import { useGetProduct } from "./hooks";
 import { useGetCartItems } from "@/layout/navbar/hooks";
-import { fetchIdCookie } from "@/layout/navbar/services";
+import { fetchIdCookie, getCartItemDetails } from "@/layout/navbar/services";
 import { styled } from "@mui/material/styles";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -11,10 +11,12 @@ import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
 import { StepIconProps } from "@mui/material/StepIcon";
-import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
-import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
-import PaymentOutlinedIcon from '@mui/icons-material/PaymentOutlined';
+import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import PaymentOutlinedIcon from "@mui/icons-material/PaymentOutlined";
 import CartItem from "../shared/cart-item/CartItem";
+import { useEffect, useState } from "react";
+import PaymentDetails from "./components/paymentDetails/PaymentDetails";
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
@@ -61,7 +63,7 @@ const ColorlibStepIconRoot = styled("div")<{
     width: 72,
     height: 72,
     border: "3px solid #0C68F4",
-    transform: 'translateY(-15%)'
+    transform: "translateY(-15%)",
   }),
 }));
 
@@ -69,9 +71,9 @@ function ColorlibStepIcon(props: StepIconProps) {
   const { active, completed, className } = props;
 
   const icons: { [index: string]: React.ReactElement } = {
-    1: <LocalMallOutlinedIcon sx={{color:"#0C68F4",fontSize:"48px",}} />,
-    2: <LocalShippingOutlinedIcon sx={{fontSize:"32px",}} />,
-    3: <PaymentOutlinedIcon sx={{fontSize:"32px",}} />
+    1: <LocalMallOutlinedIcon sx={{ color: "#0C68F4", fontSize: "48px" }} />,
+    2: <LocalShippingOutlinedIcon sx={{ fontSize: "32px" }} />,
+    3: <PaymentOutlinedIcon sx={{ fontSize: "32px" }} />,
   };
 
   return (
@@ -91,32 +93,31 @@ export default function Cart() {
   const userId = fetchIdCookie();
   const { data: cartItems } = useGetCartItems(userId);
 
-  // const { subtotal, setSubtotal } = useState();
-  // const { discount, setDiscount } = useState();
-  // const { grandTotal, setGranTotal } = useState();
+  const shipment = 22.5;
+  const [subtotal, setSubTotal] = useState(0);
+  const [discount, setDiscount] = useState(0);
+  const [grandTotal, setGrandTotal] = useState(0);
 
-  // useEffect(() => {
-  //   setSubtotal((  )=>cartItems?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0);
-  //   setDiscount(()=>cartItems?.reduce(
-  //     (acc, item) => acc + (item.discount || 0) * item.quantity,
-  //     0
-  //   ) || 0);
-    
-  // }, [subtotal, discount]);
-
-  // // const subtotal =
-  // //   cartItems?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
-  // // const discount =
-  // //   cartItems?.reduce(
-  // //     (acc, item) => acc + (item.discount || 0) * item.quantity,
-  // //     0
-  // //   ) || 0;
-  // const shipment = 22.5;
-  // const grandTotal = subtotal - discount + shipment;
+  useEffect(() => {
+    let newSubtotal = 0;
+    let newDiscount = 0;
+    let newGrandTotal = 0;
+    cartItems?.map((item: any) => {
+      getCartItemDetails(item.productId).then((productDetail) => {
+        newDiscount +=
+          (productDetail.discount.percent * productDetail.price) / 100;
+        newSubtotal += productDetail.price;
+        setSubTotal(newSubtotal);
+        setDiscount(newDiscount);
+        newGrandTotal = newSubtotal - newDiscount + shipment;
+        setGrandTotal(newGrandTotal);
+      });
+    });
+  }, [cartItems]);
 
   return (
     <Box>
-       <Box
+      <Box
         marginY={6}
         display="flex"
         justifyContent="center"
@@ -131,8 +132,13 @@ export default function Cart() {
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel StepIconComponent={ColorlibStepIcon}>
-                <Typography 
-                    sx={{ color: label === "Cart" ? "#0C68F4" : "#9E9E9E",fontSize: label === "Cart" ? "16px" : "14px",fontWeight: label === "Cart" ? "normal" : "medium",mt: label === "Cart" ? -2 : -1}}
+                  <Typography
+                    sx={{
+                      color: label === "Cart" ? "#0C68F4" : "#9E9E9E",
+                      fontSize: label === "Cart" ? "16px" : "14px",
+                      fontWeight: label === "Cart" ? "normal" : "medium",
+                      mt: label === "Cart" ? -2 : -1,
+                    }}
                   >
                     {label}
                   </Typography>
@@ -143,20 +149,24 @@ export default function Cart() {
         </Stack>
       </Box>
       <Stack direction={"column"}>
-        <Stack direction={"row"}>
+        <Stack direction={"row"} justifyContent={"space-between"}>
           <Stack direction={"column"} mb={6}>
             {cartItems?.map((item: any) => (
-              <CartItem key={item.productId} cartItemProps={item} changeComponent="account" />
+              <CartItem
+                key={item.productId}
+                cartItemProps={item}
+                changeComponent="account"
+              />
             ))}
           </Stack>
-          {/* <Stack>
+          <Stack>
             <PaymentDetails
               subtotal={subtotal}
               discount={discount}
               shipment={shipment}
               grandTotal={grandTotal}
             />
-          </Stack> */}
+          </Stack>
         </Stack>
         <Stack direction={"column"}>
           <Typography fontSize={"20px"} fontWeight={"500"}>
