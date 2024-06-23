@@ -3,9 +3,6 @@ import Card from "../shared/card/components";
 import { useGetProduct } from "./hooks";
 import { useGetCartItems } from "@/layout/navbar/hooks";
 import { fetchIdCookie } from "@/layout/navbar/services";
-import CartItem from "@/layout/navbar/components/cart-menu/cart-item";
-import PaymentDetails from "./components/paymentDetails/PaymentDetails";
-import { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -17,6 +14,7 @@ import { StepIconProps } from "@mui/material/StepIcon";
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import PaymentOutlinedIcon from '@mui/icons-material/PaymentOutlined';
+import CartItem from "../shared/cart-item/CartItem";
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
@@ -124,7 +122,7 @@ export default function Cart() {
         justifyContent="center"
         alignItems="center"
       >
-        <Stack sx={{ width: "60%" }} spacing={4}>
+        <Stack sx={{ width: "50%" }} spacing={4}>
           <Stepper
             alternativeLabel
             activeStep={0}
@@ -146,9 +144,9 @@ export default function Cart() {
       </Box>
       <Stack direction={"column"}>
         <Stack direction={"row"}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} mb={6}>
             {cartItems?.map((item: any) => (
-              <CartItem key={item.productId} cartItemProps={item} />
+              <CartItem key={item.productId} cartItemProps={item} changeComponent="account" />
             ))}
           </Stack>
           {/* <Stack>
@@ -161,13 +159,13 @@ export default function Cart() {
           </Stack> */}
         </Stack>
         <Stack direction={"column"}>
-          <Typography>
+          <Typography fontSize={"20px"} fontWeight={"500"}>
             Customers who viewed items in your browsing history also viewed
           </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <Box sx={{ display: "flex", flexDirection: "row" }} marginY={6}>
             {randomProducts?.map((item) => (
               <Card
-                // key={item.productId}
+                key={item.productId}
                 cardProps={item}
                 hoverMode={{ hoverMode: "productHover" }}
               />

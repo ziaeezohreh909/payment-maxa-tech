@@ -2,9 +2,9 @@ import { Box, Button, IconButton, Menu, Stack, Tooltip } from "@mui/material";
 import React from "react";
 import bag from "@/assets/images/navbar-icons/bag.png";
 import { useAccessCookie, useGetCartItems } from "../../hooks";
-import CartItem from "./cart-item";
 import { ICartProducts } from "../../hooks/types";
 import { fetchIdCookie } from "../../services";
+import CartItem from "@/components/shared/cart-item/CartItem";
 
 export default function CartMenu() {
   const { data: hasAccess } = useAccessCookie();
@@ -33,7 +33,7 @@ export default function CartMenu() {
             right: 0,
             bottom: 0,
             backgroundColor: "rgba(0, 0, 0, 0.4)",
-            zIndex: 1,
+            zIndex: 2,
           }}
           onClick={handleCloseCartMenu}
         />
@@ -104,7 +104,7 @@ export default function CartMenu() {
                 >
                   {cartItems &&
                     cartItems.map((item: ICartProducts) => (
-                      <CartItem key={item.productId} cartItemProps={item} />
+                      <CartItem key={item.productId} cartItemProps={item} changeComponent="menu" />
                     ))}
                 </Stack>
                 <Stack height={"48px"} direction={"row"} alignItems={"center"}>

@@ -36,7 +36,7 @@ export default function Login() {
               right: 0,
               bottom: 0,
               backgroundColor: "rgba(0, 0, 0, 0.4)",
-              zIndex: 1,
+              zIndex: 2,
             }}
             onClick={handleClose}
           >
@@ -50,7 +50,7 @@ export default function Login() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                zIndex: 2,
+                zIndex: 3,
               }}
             >
               <Box
@@ -59,7 +59,7 @@ export default function Login() {
                   backgroundColor: "white",
                   width: "600px",
                   height: "fit",
-                  zIndex: 3,
+                  zIndex: 4,
                   borderRadius: "8px",
                   px: "80px",
                 }}
