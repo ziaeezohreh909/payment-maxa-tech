@@ -21,8 +21,6 @@ export default function CartMenu() {
     setAnchorElCart(null);
   };
 
-  console.log(cartItems);
-
   return (
     <Box>
       {anchorElCart && (

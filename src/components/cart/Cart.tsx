@@ -1,8 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Card from "../shared/card/components";
 import { useGetProduct } from "./hooks";
-import { useGetCartItems } from "@/layout/navbar/hooks";
-import { fetchIdCookie } from "@/layout/navbar/services";
+import { useGetCartItemDetails, useGetCartItems } from "@/layout/navbar/hooks";
+import { fetchIdCookie, getCartItemDetails } from "@/layout/navbar/services";
 import CartItem from "@/layout/navbar/components/cart-menu/cart-item";
 import PaymentDetails from "./components/paymentDetails/PaymentDetails";
 import { useEffect, useState } from "react";
@@ -12,28 +12,27 @@ export default function Cart() {
   const userId = fetchIdCookie();
   const { data: cartItems } = useGetCartItems(userId);
 
-  const { subtotal, setSubtotal } = useState();
-  const { discount, setDiscount } = useState();
-  const { grandTotal, setGranTotal } = useState();
+  const shipment = 22.5;
+  const [subtotal, setSubTotal] = useState(0);
+  const [discount, setDiscount] = useState(0);
+  const [grandTotal, setGrandTotal] = useState(0);
 
   useEffect(() => {
-    setSubtotal((  )=>cartItems?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0);
-    setDiscount(()=>cartItems?.reduce(
-      (acc, item) => acc + (item.discount || 0) * item.quantity,
-      0
-    ) || 0);
-    
-  }, [subtotal, discount]);
-
-  // const subtotal =
-  //   cartItems?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
-  // const discount =
-  //   cartItems?.reduce(
-  //     (acc, item) => acc + (item.discount || 0) * item.quantity,
-  //     0
-  //   ) || 0;
-  const shipment = 22.5;
-  const grandTotal = subtotal - discount + shipment;
+    let newSubtotal = 0;
+    let newDiscount = 0;
+    let newGrandTotal = 0;
+    cartItems?.map((item: any) => {
+      getCartItemDetails(item.productId).then((productDetail) => {
+        newDiscount +=
+          (productDetail.discount.percent * productDetail.price) / 100;
+        newSubtotal += productDetail.price;
+        setSubTotal(newSubtotal);
+        setDiscount(newDiscount);
+        newGrandTotal = newSubtotal - newDiscount + shipment;
+        setGrandTotal(newGrandTotal);
+      });
+    });
+  }, [cartItems]);
 
   return (
     <Box>
@@ -59,9 +58,9 @@ export default function Cart() {
             Customers who viewed items in your browsing history also viewed
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "row" }}>
-            {randomProducts?.map((item) => (
+            {randomProducts?.map((item, index) => (
               <Card
-                // key={item.productId}
+                key={index}
                 cardProps={item}
                 hoverMode={{ hoverMode: "productHover" }}
               />

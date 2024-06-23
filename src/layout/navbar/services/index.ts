@@ -69,7 +69,7 @@ export const getCartItems = async (userId) => {
 
 export const getCartItemDetails = async (productId: number) => {
   const response = await axios.get(`${BASE_URL}/products/${productId}`);
-  console.log(response.data);
+  // console.log(response.data);
   return response.data;
 };
 

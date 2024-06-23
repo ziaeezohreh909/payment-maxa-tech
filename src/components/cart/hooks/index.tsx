@@ -10,3 +10,5 @@ export const useGetProduct = () => {
     refetchOnWindowFocus: false,
   });
 };
+
+
