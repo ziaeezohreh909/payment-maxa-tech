@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { paymentType } from "../../hooks/type";
+import Link from "next/link";
 
 export default function PaymentDetails({
   subtotal,
@@ -42,9 +43,11 @@ export default function PaymentDetails({
           <Typography>Grand Total</Typography>
           <Typography>${grandTotal.toFixed(2)}</Typography>
         </Stack>
-        <Button variant="contained" sx={{ mt: "25px", py: "12px" }}>
-          Procced to checkout
-        </Button>
+        <Link href={"/checkout"}>
+          <Button variant="contained" sx={{ mt: "25px", py: "12px" }} fullWidth>
+            Procced to checkout
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   );
