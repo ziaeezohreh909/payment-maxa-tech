@@ -1,4 +1,4 @@
-import Cart from "@/components/cart/Cart";
+import Cart from "@/components/cart/components/Cart";
 import { NextPageWithLayout } from "../_app";
 import Layout from "@/layout";
 
