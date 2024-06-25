@@ -209,19 +209,19 @@ export default function Checkout() {
               />
             </Stack>
             <Stack>
-              {/* <Link href={"/checkout"}> */}
-              <Button
-                variant="contained"
-                sx={{
-                  mt: "25px",
-                  py: "12px",
-                  textTransform: "none",
-                  width: "97%",
-                }}
-              >
-                Continue to pay
-              </Button>
-              {/* </Link> */}
+              <Link href={"/payment"}>
+                <Button
+                  variant="contained"
+                  sx={{
+                    mt: "25px",
+                    py: "12px",
+                    textTransform: "none",
+                    width: "97%",
+                  }}
+                >
+                  Continue to pay
+                </Button>
+              </Link>
             </Stack>
           </Paper>
         </Stack>
