@@ -5,6 +5,7 @@ import { useAccessCookie, useGetCartItems } from "../../hooks";
 import { ICartProducts } from "../../hooks/types";
 import { fetchIdCookie } from "../../services";
 import CartItem from "@/components/shared/cart-item/CartItem";
+import Link from "next/link";
 
 export default function CartMenu() {
   const { data: hasAccess } = useAccessCookie();
@@ -19,8 +20,6 @@ export default function CartMenu() {
   const handleCloseCartMenu = () => {
     setAnchorElCart(null);
   };
-
-  console.log(cartItems);
 
   return (
     <Box>
@@ -104,7 +103,11 @@ export default function CartMenu() {
                 >
                   {cartItems &&
                     cartItems.map((item: ICartProducts) => (
-                      <CartItem key={item.productId} cartItemProps={item} changeComponent="menu" />
+                      <CartItem
+                        key={item.productId}
+                        cartItemProps={item}
+                        changeComponent="menu"
+                      />
                     ))}
                 </Stack>
                 <Stack height={"48px"} direction={"row"} alignItems={"center"}>
@@ -114,22 +117,25 @@ export default function CartMenu() {
                     </Box>
                     <Box>$557</Box>
                   </Stack>
-                  <Button
-                    sx={{
-                      height: "100%",
-                      flexGrow: "1",
-                      backgroundColor: "#0C68F4",
-                      color: "white",
-                      textTransform: "none",
-                      fontSize: "16px",
-                      fontWeight: "300",
-                      "&:hover": {
-                        backgroundColor: "#005BB5",
-                      },
-                    }}
-                  >
-                    Proceed to Cart
-                  </Button>
+                  <Link href="/cart">
+                    <Button
+                      fullWidth
+                      sx={{
+                        height: "100%",
+                        flexGrow: "1",
+                        backgroundColor: "#0C68F4",
+                        color: "white",
+                        textTransform: "none",
+                        fontSize: "16px",
+                        fontWeight: "300",
+                        "&:hover": {
+                          backgroundColor: "#005BB5",
+                        },
+                      }}
+                    >
+                      Proceed to Cart
+                    </Button>
+                  </Link>
                 </Stack>
               </Box>
             ) : (
